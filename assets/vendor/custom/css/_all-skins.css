@@ -7,6 +7,7 @@
 }
 .skin-blue .main-header .navbar .nav > li > a {
   color: #ffffff;font-size: 1.12em;
+  line-height: 50px;
 }
 .skin-blue .main-header .navbar .nav > li > a:hover,
 .skin-blue .main-header .navbar .nav > li > a:active,

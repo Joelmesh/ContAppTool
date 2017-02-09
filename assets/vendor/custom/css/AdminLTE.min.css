@@ -3,7 +3,7 @@
  *   Author: Almsaeed Studio
  *	 Website: Almsaeed Studio <http://almsaeedstudio.com>
  *   License: Open source - MIT
- *           Please visit http://opensource.org/licenses/MIT for more information
+ *   Please visit http://opensource.org/licenses/MIT for more information
 !*/
 html, body {
 	min-height: 100%
@@ -82,7 +82,9 @@ body {
 	background: #fff;
 	padding: 15px;
 	color: #444;
-	border-top: 1px solid #d2d6de
+	border-top: 1px solid #d2d6de;
+	overflow: hidden;
+	text-align: right;
 }
 .fixed .main-header, .fixed .main-sidebar, .fixed .left-side {
 	position: fixed
