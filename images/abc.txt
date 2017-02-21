@@ -1,0 +1,285 @@
+index_gr2.js:92 Passed Emailranjan.kumar@benisontech.com
+index_gr2.js:116 081
+index_gr2.js:117 ranjan.kumar@benisontech.com
+index_gr2.js:123 Key for:ranjan.kumar@benisontech.com:-KcNFpetkH7HALtXCbY-
+index_gr2.js:150 reportingID found:-KcNGI_k-uDRb4rCQc1f
+index_gr2.js:150 reportingID found:-KcNGy_NJovIXZqFa1Vv
+index_gr2.js:150 reportingID found:-KcNHIONuLWig05swV-x
+index_gr2.js:150 reportingID found:-KcNGhzsBELZfSxOLC4m
+index_gr2.js:150 reportingID found:-KcNHcEGVlS5Wubv3ew-
+index_gr2.js:135 called finally-----------called finally-------------------should get called once
+index_gr2.js:928 in get_names()................................
+index_gr2.js:932 Keys:-KcNGI_k-uDRb4rCQc1f
+index_gr2.js:932 Keys:-KcNGy_NJovIXZqFa1Vv
+index_gr2.js:932 Keys:-KcNHIONuLWig05swV-x
+index_gr2.js:932 Keys:-KcNGhzsBELZfSxOLC4m
+index_gr2.js:932 Keys:-KcNHcEGVlS5Wubv3ew-
+index_gr2.js:940 >>>>>>>>>>key sent>>>>>>>>>-KcNGI_k-uDRb4rCQc1f
+index_gr2.js:173 got key>>>>>>>>>>>>-KcNGI_k-uDRb4rCQc1f
+index_gr2.js:177 =------------->rel::::https://apraisalstaging.firebaseio.com/EmployeeDB/EInfo/-KcNGI_k-uDRb4rCQc1f/Name
+index_gr2.js:194 this gets the notifications for-------------->undefined
+index_gr2.js:198 currentDate value:Sun Feb 19 2017 23:14:42 GMT+0530 (India Standard Time)
+index_gr2.js:202 date day value in if Toggle:0
+index_gr2.js:860 https://apraisalstaging.firebaseio.com/EmployeeDB/EdateApraise/-KcNGI_k-uDRb4rCQc1f
+index_gr2.js:944 Rel-----:https://apraisalstaging.firebaseio.com/EmployeeDB/EInfo/-KcNGI_k-uDRb4rCQc1f
+index_gr2.js:940 >>>>>>>>>>key sent>>>>>>>>>-KcNGy_NJovIXZqFa1Vv
+index_gr2.js:173 got key>>>>>>>>>>>>-KcNGy_NJovIXZqFa1Vv
+index_gr2.js:177 =------------->rel::::https://apraisalstaging.firebaseio.com/EmployeeDB/EInfo/-KcNGy_NJovIXZqFa1Vv/Name
+index_gr2.js:194 this gets the notifications for-------------->undefined
+index_gr2.js:198 currentDate value:Sun Feb 19 2017 23:14:42 GMT+0530 (India Standard Time)
+index_gr2.js:202 date day value in if Toggle:0
+index_gr2.js:860 https://apraisalstaging.firebaseio.com/EmployeeDB/EdateApraise/-KcNGy_NJovIXZqFa1Vv
+index_gr2.js:944 Rel-----:https://apraisalstaging.firebaseio.com/EmployeeDB/EInfo/-KcNGy_NJovIXZqFa1Vv
+index_gr2.js:940 >>>>>>>>>>key sent>>>>>>>>>-KcNHIONuLWig05swV-x
+index_gr2.js:173 got key>>>>>>>>>>>>-KcNHIONuLWig05swV-x
+index_gr2.js:177 =------------->rel::::https://apraisalstaging.firebaseio.com/EmployeeDB/EInfo/-KcNHIONuLWig05swV-x/Name
+index_gr2.js:194 this gets the notifications for-------------->undefined
+index_gr2.js:198 currentDate value:Sun Feb 19 2017 23:14:42 GMT+0530 (India Standard Time)
+index_gr2.js:202 date day value in if Toggle:0
+index_gr2.js:860 https://apraisalstaging.firebaseio.com/EmployeeDB/EdateApraise/-KcNHIONuLWig05swV-x
+index_gr2.js:944 Rel-----:https://apraisalstaging.firebaseio.com/EmployeeDB/EInfo/-KcNHIONuLWig05swV-x
+index_gr2.js:940 >>>>>>>>>>key sent>>>>>>>>>-KcNGhzsBELZfSxOLC4m
+index_gr2.js:173 got key>>>>>>>>>>>>-KcNGhzsBELZfSxOLC4m
+index_gr2.js:177 =------------->rel::::https://apraisalstaging.firebaseio.com/EmployeeDB/EInfo/-KcNGhzsBELZfSxOLC4m/Name
+index_gr2.js:194 this gets the notifications for-------------->undefined
+index_gr2.js:198 currentDate value:Sun Feb 19 2017 23:14:42 GMT+0530 (India Standard Time)
+index_gr2.js:202 date day value in if Toggle:0
+index_gr2.js:860 https://apraisalstaging.firebaseio.com/EmployeeDB/EdateApraise/-KcNGhzsBELZfSxOLC4m
+index_gr2.js:944 Rel-----:https://apraisalstaging.firebaseio.com/EmployeeDB/EInfo/-KcNGhzsBELZfSxOLC4m
+index_gr2.js:940 >>>>>>>>>>key sent>>>>>>>>>-KcNHcEGVlS5Wubv3ew-
+index_gr2.js:173 got key>>>>>>>>>>>>-KcNHcEGVlS5Wubv3ew-
+index_gr2.js:177 =------------->rel::::https://apraisalstaging.firebaseio.com/EmployeeDB/EInfo/-KcNHcEGVlS5Wubv3ew-/Name
+index_gr2.js:194 this gets the notifications for-------------->undefined
+index_gr2.js:198 currentDate value:Sun Feb 19 2017 23:14:42 GMT+0530 (India Standard Time)
+index_gr2.js:202 date day value in if Toggle:0
+index_gr2.js:860 https://apraisalstaging.firebaseio.com/EmployeeDB/EdateApraise/-KcNHcEGVlS5Wubv3ew-
+index_gr2.js:944 Rel-----:https://apraisalstaging.firebaseio.com/EmployeeDB/EInfo/-KcNHcEGVlS5Wubv3ew-
+index_gr2.js:185 --------------->.....------------>>Raushan
+index_gr2.js:992 Print name:Raushan
+index_gr2.js:992 Print name:Raushan
+index_gr2.js:992 Print name:Raushan
+index_gr2.js:982 ----------->whats key here??undefined
+index_gr2.js:1018 key which should not be undefined::-------------------->undefined
+index_gr2.js:1024 Printed Dates ::3/2/2017
+index_gr2.js:1024 Printed Dates ::20/1/2017
+index_gr2.js:1024 Printed Dates ::10/2/2017
+index_gr2.js:1030 Printed Ratings ::3.2
+index_gr2.js:1030 Printed Ratings ::4
+index_gr2.js:1030 Printed Ratings ::2
+index_gr2.js:1035 NameRaushan
+index_gr2.js:173 got key>>>>>>>>>>>>undefined
+index_gr2.js:177 =------------->rel::::https://apraisalstaging.firebaseio.com/EmployeeDB/EInfo/undefined/Name
+index_gr2.js:194 this gets the notifications for-------------->undefined
+index_gr2.js:198 currentDate value:Sun Feb 19 2017 23:14:42 GMT+0530 (India Standard Time)
+index_gr2.js:202 date day value in if Toggle:0
+index_gr2.js:860 https://apraisalstaging.firebaseio.com/EmployeeDB/EdateApraise/undefined
+index_gr2.js:910 Object {Attitude: "3", CustomerFocus: "3", Dateval: "3/2/2017", DeadlineMet: "4", Discipline: "3"…}
+index_gr2.js:910 Object {Attitude: "4", CustomerFocus: "4", Dateval: "20/1/2017", DeadlineMet: "4", Discipline: "4"…}
+index_gr2.js:910 Object {Attitude: "1", CustomerFocus: "3", Dateval: "10/2/2017", DeadlineMet: "1", Discipline: "2"…}
+index_gr2.js:875 ---------->count in myFun()0
+index_gr2.js:879 ----Date is:------undefined-----3/2/2017
+index_gr2.js:879 ----Date is:------undefined-----20/1/2017
+index_gr2.js:879 ----Date is:------undefined-----10/2/2017
+index_gr2.js:886 in myfun():3/2/2017,20/1/2017,10/2/2017
+index_gr2.js:951 success
+index_gr2.js:953 from get_Names()::[object Object]
+index_gr2.js:955 ..........Name from the get_Names():Raushan
+index_gr2.js:185 --------------->.....------------>>Manish
+index_gr2.js:992 Print name:Manish
+index_gr2.js:992 Print name:Manish
+index_gr2.js:992 Print name:Manish
+index_gr2.js:982 ----------->whats key here??undefined
+index_gr2.js:1018 key which should not be undefined::-------------------->undefined
+index_gr2.js:1024 Printed Dates ::3/2/2017
+index_gr2.js:1024 Printed Dates ::20/1/2017
+index_gr2.js:1024 Printed Dates ::10/2/2017
+index_gr2.js:1024 Printed Dates ::27/1/2017
+index_gr2.js:1024 Printed Dates ::20/1/2017
+index_gr2.js:1024 Printed Dates ::3/2/2017
+index_gr2.js:1030 Printed Ratings ::4.2
+index_gr2.js:1030 Printed Ratings ::4
+index_gr2.js:1030 Printed Ratings ::2.4
+index_gr2.js:1035 NameManish
+index_gr2.js:173 got key>>>>>>>>>>>>undefined
+index_gr2.js:177 =------------->rel::::https://apraisalstaging.firebaseio.com/EmployeeDB/EInfo/undefined/Name
+index_gr2.js:194 this gets the notifications for-------------->undefined
+index_gr2.js:198 currentDate value:Sun Feb 19 2017 23:14:42 GMT+0530 (India Standard Time)
+index_gr2.js:202 date day value in if Toggle:0
+index_gr2.js:860 https://apraisalstaging.firebaseio.com/EmployeeDB/EdateApraise/undefined
+index_gr2.js:910 Object {Attitude: "4", CustomerFocus: "5", Dateval: "27/1/2017", DeadlineMet: "5", Discipline: "3"…}
+index_gr2.js:910 Object {Attitude: "4", CustomerFocus: "5", Dateval: "20/1/2017", DeadlineMet: "2", Discipline: "5"…}
+index_gr2.js:910 Object {Attitude: "3", CustomerFocus: "3", Dateval: "3/2/2017", DeadlineMet: "1", Discipline: "4"…}
+index_gr2.js:875 ---------->count in myFun()0
+index_gr2.js:879 ----Date is:------undefined-----27/1/2017
+index_gr2.js:879 ----Date is:------undefined-----20/1/2017
+index_gr2.js:879 ----Date is:------undefined-----3/2/2017
+index_gr2.js:899 please Enter rating for Manish for the date 10/2/2017
+index_gr2.js:951 success
+index_gr2.js:953 from get_Names()::[object Object]
+index_gr2.js:955 ..........Name from the get_Names():Manish
+index_gr2.js:185 --------------->.....------------>>Pravina
+index_gr2.js:992 Print name:undefined
+index_gr2.js:992 Print name:undefined
+index_gr2.js:992 Print name:undefined
+index_gr2.js:982 ----------->whats key here??undefined
+index_gr2.js:1018 key which should not be undefined::-------------------->undefined
+index_gr2.js:1024 Printed Dates ::3/2/2017
+index_gr2.js:1024 Printed Dates ::20/1/2017
+index_gr2.js:1024 Printed Dates ::10/2/2017
+index_gr2.js:1024 Printed Dates ::27/1/2017
+index_gr2.js:1024 Printed Dates ::20/1/2017
+index_gr2.js:1024 Printed Dates ::3/2/2017
+index_gr2.js:1024 Printed Dates ::10/2/2017
+index_gr2.js:1024 Printed Dates ::3/2/2017
+index_gr2.js:1024 Printed Dates ::20/1/2017
+index_gr2.js:1030 Printed Ratings ::4
+index_gr2.js:1030 Printed Ratings ::5
+index_gr2.js:1030 Printed Ratings ::2.2
+index_gr2.js:1035 Nameundefined
+index_gr2.js:173 got key>>>>>>>>>>>>undefined
+index_gr2.js:177 =------------->rel::::https://apraisalstaging.firebaseio.com/EmployeeDB/EInfo/undefined/Name
+index_gr2.js:194 this gets the notifications for-------------->undefined
+index_gr2.js:198 currentDate value:Sun Feb 19 2017 23:14:43 GMT+0530 (India Standard Time)
+index_gr2.js:202 date day value in if Toggle:0
+index_gr2.js:860 https://apraisalstaging.firebaseio.com/EmployeeDB/EdateApraise/undefined
+index_gr2.js:910 Object {Attitude: "4", CustomerFocus: "5", Dateval: "10/2/2017", DeadlineMet: "3", Discipline: "3"…}
+index_gr2.js:910 Object {Attitude: "5", CustomerFocus: "5", Dateval: "3/2/2017", DeadlineMet: "5", Discipline: "5"…}
+index_gr2.js:910 Object {Attitude: "2", CustomerFocus: "2", Dateval: "20/1/2017", DeadlineMet: "1", Discipline: "3"…}
+index_gr2.js:875 ---------->count in myFun()0
+index_gr2.js:879 ----Date is:------undefined-----10/2/2017
+index_gr2.js:879 ----Date is:------undefined-----3/2/2017
+index_gr2.js:879 ----Date is:------undefined-----20/1/2017
+index_gr2.js:886 in myfun():10/2/2017,3/2/2017,20/1/2017
+index_gr2.js:951 success
+index_gr2.js:953 from get_Names()::[object Object]
+index_gr2.js:955 ..........Name from the get_Names():Pravina
+index_gr2.js:185 --------------->.....------------>>Sachin
+index_gr2.js:992 Print name:undefined
+index_gr2.js:992 Print name:undefined
+index_gr2.js:982 ----------->whats key here??undefined
+index_gr2.js:1018 key which should not be undefined::-------------------->undefined
+index_gr2.js:1024 Printed Dates ::3/2/2017
+index_gr2.js:1024 Printed Dates ::20/1/2017
+index_gr2.js:1024 Printed Dates ::10/2/2017
+index_gr2.js:1024 Printed Dates ::27/1/2017
+index_gr2.js:1024 Printed Dates ::20/1/2017
+index_gr2.js:1024 Printed Dates ::3/2/2017
+index_gr2.js:1024 Printed Dates ::10/2/2017
+index_gr2.js:1024 Printed Dates ::3/2/2017
+index_gr2.js:1024 Printed Dates ::20/1/2017
+index_gr2.js:1024 Printed Dates ::27/1/2017
+index_gr2.js:1024 Printed Dates ::20/1/2017
+index_gr2.js:1030 Printed Ratings ::4
+index_gr2.js:1030 Printed Ratings ::4.8
+index_gr2.js:1030 Printed Ratings ::2.2
+index_gr2.js:1035 Nameundefined
+index_gr2.js:173 got key>>>>>>>>>>>>undefined
+index_gr2.js:177 =------------->rel::::https://apraisalstaging.firebaseio.com/EmployeeDB/EInfo/undefined/Name
+index_gr2.js:194 this gets the notifications for-------------->undefined
+index_gr2.js:198 currentDate value:Sun Feb 19 2017 23:14:43 GMT+0530 (India Standard Time)
+index_gr2.js:202 date day value in if Toggle:0
+index_gr2.js:860 https://apraisalstaging.firebaseio.com/EmployeeDB/EdateApraise/undefined
+index_gr2.js:910 Object {Attitude: "4", CustomerFocus: "4", Dateval: "27/1/2017", DeadlineMet: "5", Discipline: "3"…}
+index_gr2.js:910 Object {Attitude: "5", CustomerFocus: "4", Dateval: "20/1/2017", DeadlineMet: "5", Discipline: "5"…}
+index_gr2.js:875 ---------->count in myFun()0
+index_gr2.js:879 ----Date is:------undefined-----27/1/2017
+index_gr2.js:879 ----Date is:------undefined-----20/1/2017
+index_gr2.js:899 please Enter rating for Sachin for the date 10/2/2017
+index_gr2.js:951 success
+index_gr2.js:953 from get_Names()::[object Object]
+index_gr2.js:955 ..........Name from the get_Names():Sachin
+index_gr2.js:185 --------------->.....------------>>Joel
+index_gr2.js:992 Print name:undefined
+index_gr2.js:992 Print name:undefined
+index_gr2.js:992 Print name:undefined
+index_gr2.js:982 ----------->whats key here??undefined
+index_gr2.js:1018 key which should not be undefined::-------------------->undefined
+index_gr2.js:1024 Printed Dates ::3/2/2017
+index_gr2.js:1024 Printed Dates ::20/1/2017
+index_gr2.js:1024 Printed Dates ::10/2/2017
+index_gr2.js:1024 Printed Dates ::27/1/2017
+index_gr2.js:1024 Printed Dates ::20/1/2017
+index_gr2.js:1024 Printed Dates ::3/2/2017
+index_gr2.js:1024 Printed Dates ::10/2/2017
+index_gr2.js:1024 Printed Dates ::3/2/2017
+index_gr2.js:1024 Printed Dates ::20/1/2017
+index_gr2.js:1024 Printed Dates ::27/1/2017
+index_gr2.js:1024 Printed Dates ::20/1/2017
+index_gr2.js:1024 Printed Dates ::3/2/2017
+index_gr2.js:1024 Printed Dates ::27/1/2017
+index_gr2.js:1024 Printed Dates ::20/1/2017
+3index_gr2.js:1030 Printed Ratings ::3.6
+index_gr2.js:1035 Nameundefined
+index_gr2.js:173 got key>>>>>>>>>>>>undefined
+index_gr2.js:177 =------------->rel::::https://apraisalstaging.firebaseio.com/EmployeeDB/EInfo/undefined/Name
+index_gr2.js:194 this gets the notifications for-------------->undefined
+index_gr2.js:198 currentDate value:Sun Feb 19 2017 23:14:43 GMT+0530 (India Standard Time)
+index_gr2.js:202 date day value in if Toggle:0
+index_gr2.js:860 https://apraisalstaging.firebaseio.com/EmployeeDB/EdateApraise/undefined
+index_gr2.js:910 Object {Attitude: "4", CustomerFocus: "4", Dateval: "3/2/2017", DeadlineMet: "3", Discipline: "3"…}
+index_gr2.js:910 Object {Attitude: "4", CustomerFocus: "5", Dateval: "27/1/2017", DeadlineMet: "3", Discipline: "3"…}
+index_gr2.js:910 Object {Attitude: "3", CustomerFocus: "4", Dateval: "20/1/2017", DeadlineMet: "4", Discipline: "4"…}
+index_gr2.js:875 ---------->count in myFun()0
+index_gr2.js:879 ----Date is:------undefined-----3/2/2017
+index_gr2.js:879 ----Date is:------undefined-----27/1/2017
+index_gr2.js:879 ----Date is:------undefined-----20/1/2017
+index_gr2.js:899 please Enter rating for Joel for the date 10/2/2017
+index_gr2.js:951 success
+index_gr2.js:953 from get_Names()::[object Object]
+index_gr2.js:955 ..........Name from the get_Names():Joel
+5index_gr2.js:185 --------------->.....------------>>null
+index_gr2.js:875 ---------->count in myFun()0
+index_gr2.js:899 please Enter rating for null for the date 10/2/2017
+index_gr2.js:875 ---------->count in myFun()0
+index_gr2.js:899 please Enter rating for null for the date 10/2/2017
+index_gr2.js:875 ---------->count in myFun()0
+index_gr2.js:899 please Enter rating for null for the date 10/2/2017
+index_gr2.js:875 ---------->count in myFun()0
+index_gr2.js:899 please Enter rating for null for the date 10/2/2017
+index_gr2.js:875 ---------->count in myFun()0
+index_gr2.js:899 please Enter rating for null for the date 10/2/2017
+index_gr2.js:1068 should get called last -----------------------------------
+index_gr2.js:1089 [
+    {
+        "label": "Raushan",
+        "borderColor": "rgb(255, 99, 132)",
+        "data": [
+            3.2,
+            4,
+            2
+        ]
+    },
+    {
+        "label": "Manish",
+        "borderColor": "rgb(255, 99, 132)",
+        "data": [
+            4.2,
+            4,
+            2.4
+        ]
+    },
+    {
+        "borderColor": "rgb(255, 99, 132)",
+        "data": [
+            4,
+            5,
+            2.2
+        ]
+    },
+    {
+        "borderColor": "rgb(255, 99, 132)",
+        "data": [
+            4,
+            4.8,
+            2.2
+        ]
+    },
+    {
+        "borderColor": "rgb(255, 99, 132)",
+        "data": [
+            3.6,
+            3.6,
+            3.6
+        ]
+    }
+]

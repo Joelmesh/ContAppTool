@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<title>Welcome to Continue Appraisel form</title>
+
+
+<link rel="stylesheet" type="text/css" href="../assets/vendor/custom/css/main.css">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+<header class="main-header">
+    <!-- Logo -->
+    <a href="index.html" class="logo">
+    <!-- mini logo for sidebar mini 50x50 pixels -->
+    <span class="logo-mini"><b> <img src="../images/Benison_icon.png" alt=""/></b></span>
+    <!-- logo for regular state and mobile devices -->
+    <span class="logo-lg"><b><img src="../images/Benison_icon.png" alt=""/> BENISON</b></span>
+    </a>
+
+    <!-- Header Navbar -->
+    <nav class="navbar navbar-static-top" role="navigation">
+        <!-- Sidebar toggle button-->
+        <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button"><span class="sr-only">Toggle navigation</span></a>   	
+            
+      <div class="navbar-custom-menu">
+            <ul class="nav navbar-nav">          
+                <li class="dropdown user user-menu"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="fausericon"><i class="fa fa-user"></i></span><span class="hidden-xs_new"><script>var Name=localStorage.getItem("Email");document.write(Name);
+</script></span> &nbsp;<i class="fa fa-caret-down"></i></a>
+                    <ul class="dropdown-menu dropdown-menunw  animated fadeInDown pull-right">
+                      <li><a href="#">Profile</a></li>
+                      <li><a href="#">Settings</a></li>
+                      <li><a href="#" onclick="callLogout()"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<!-- Left side column. contains the logo and sidebar -->
+<aside class="main-sidebar">
+    <section class="sidebar">
+        <div class="user-panel">
+            <h2>Continous Appraisel Web-App</h2>
+        </div>
+      
+      	<!-- sidebar menu: -->
+        <ul class="sidebar-menu">
+            <li class="treeview"><a href="dashboard.html"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
+            <li class="treeview"><a href="add_rating.html"><i class="fa fa-edit"></i> <span>Add Ratings</span></a></li>
+            <!--<li class="treeview"><a href="employeelist.html"><i class="fa fa-list"></i> <span>Emp List with Project</span></a></li>-->
+          <!--  <li class="active treeview"><a href="#"><i class="fa fa-pie-chart"></i> <span>Reports</span>
+                <i class="fa fa-angle-left pull-right"></i></a>
+                <ul class="treeview-menu">                  
+                  	<li><a href="#"><i class="fa fa-circle-o"></i> Weekly Report</a></li>
+                    <li><a href="#"><i class="fa fa-circle-o"></i> Monthly Reports</a></li>
+                    <li><a href="#"><i class="fa fa-circle-o"></i> Yearly Reports </a></li>
+                </ul>
+            </li>  -->                  
+        </ul>
+    </section>
+</aside>
+
+<!-- Content Wrapper -->
+<div class="content-wrapper">
+    <section class="content-header">
+        <h1>View Rating</small></h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li><a href="#">View Rating</a></li>
+        </ol>
+    </section>
+
+    <section class="content">
+    	<div class="row">
+            <div class="col-md-12">
+                <div class="box box-info">                
+                    <div class="box-header with-border">
+						<!--<h3 class="box-title">Choose options here</h3>-->
+                    </div>
+                    <br>
+                    
+                    <div class="row">
+                        <div class="col-sm-5">
+                            <div class="form-group">
+                                <label for="inputEmail3" class="col-sm-4 control-label text-right">Employee : </label>
+								<div class="col-sm-8"><script>;document.write(localStorage.getItem("VName"));</script></div>
+                              
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-12">
+                <div class="box">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Garph</h3>      
+                        <div class="box-tools pull-right">
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                        <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                      </div>
+                    </div>
+                    
+                    <div class="box-body">
+               	    	<div class="col-md-12">
+                        	<canvas id="canvas"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+    </section>
+</div>
+    
+
+<footer class="main-footer">
+<div class="hidden-xs">
+    <div class="col-md-12">
+        <div class="footer_nav_text">All Copyright © 2014 - 2017 Benison Technologies</div>
+    </div>
+</div>
+</footer>
+</div>
+
+<script src="../assets/vendor/bootstrap/js/lib/jquery/jquery.js"></script>
+<!-- jQuery 2.2.0 -->
+<script src="../assets/vendor/bootstrap/js/lib/jquery/jquery-2.0.3.min.js"></script>
+<script src="../assets/vendor/bootstrap/js/lib/bootstrap/bootstrap.js"></script>
+
+<!-- Custom jQuery -->
+<script src="../assets/vendor/custom/js/jquery.slimscroll.min.js"></script>
+<script src="../assets/vendor/custom/js/app.min.js"></script>
+<script src="../assets/vendor/custom/js/graph_ctrl.js"></script>
+<script src="../assets/vendor/custom/js/graph.js"></script>
+
+
+<!--Adding firebase source files -->
+
+<script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
+<script src="https://cdn.firebase.com/v0/firebase-simple-login.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.6.7/firebase.js"></script>
+<script>
+
+// Initialize Firebase
+
+			 var config = {
+							apiKey: "AIzaSyDrW6XRPqaLSLvy3gPWTtxkKazrmo8LlTI",
+							authDomain: "apraisalstaging.firebaseapp.com",
+							databaseURL: "https://apraisalstaging.firebaseio.com",
+							storageBucket: "apraisalstaging.appspot.com",
+							messagingSenderId: "376417868003"
+						  };
+			  firebase.initializeApp(config);
+</script>
+
+<script>
+
+var Name;
+
+window.onload = function() {
+    Name=localStorage.getItem("VName");
+	Plot_graph();}
+
+    function Plot_graph()
+    {
+        Chart.defaults.global.tooltipTemplate =
+      "<%if (label){%><%=label%>: <%}%><%= value %>";
+        var Name=localStorage.getItem("VName");
+        var  Ikey;
+        var dbref=new Firebase("https://apraisalstaging.firebaseio.com/EmployeeDB/EInfo").orderByKey();
+
+			dbref
+			.once("value")
+			.then
+			(
+				function(snapshot)
+				{
+
+					snapshot.forEach
+					(
+
+					function(childsnapshot)
+					{
+											   
+					 var data = childsnapshot.val();
+					 var Nameval=data.Name;
+					 var Dates_log=new Array();
+					 var O_rating=new Array();
+					 var Attitude=new Array;
+					 var Cfocus=new Array();
+					 var tooltip;
+
+							if(Nameval==Name)
+							 {
+							 console.log("Success");
+							 Ikey=childsnapshot.key();
+					 
+							 var dxRef=new Firebase("https://apraisalstaging.firebaseio.com/EmployeeDB/EApraise/"+Ikey);	
+							 dxRef
+							.once("value")
+								.then
+								(
+									function(snapshot)
+									{
+									
+										function myfunction(){
+										
+											   for(var i=0;i<O_rating.length;i++)
+											   console.log("Overall Ratings:"+O_rating[i]);
+											   for(var i=0;i<Dates_log.length;i++)
+											   console.log("Date:"+Dates_log[i]);
+
+											   for(var i=0;i<Attitude.length;i++)
+											   {
+											   tooltip = "Attitude:" + Attitude[i] + ", Customer_focus: " + Cfocus[i] ;
+                                               }
+											   for(var i=0;i<Attitude.length;i++)
+											   {
+											   console.log("Attitude:"+Attitude[i]);
+											    }
+												var config =
+												{
+													type: 'line',
+													data: {
+														labels:Dates_log,	//dates populated
+														datasets: [{
+															label:Name,		//Name of reporting employee
+															backgroundColor: window.chartColors.red,
+															borderColor: window.chartColors.red,
+															data:O_rating,
+															fill: false,
+														}]
+													},
+													options: {
+														responsive: true,
+														title:{
+															display:true,
+															text:'Graph view'
+														},
+                                                    tooltips: {
+
+                                                    mode: 'index',				//Populate the entire datalist here
+                                                    intersect: false,
+
+														},
+
+
+                                                    hover: {
+                                                        mode: 'nearest',
+                                                        intersect: false
+                                                    },
+														scales: {
+															xAxes: [{
+																display: true,
+																scaleLabel: {
+																	display: true,
+																	labelString: 'Weeks'
+																}
+															}],
+															yAxes: [{
+																display: true,
+																scaleLabel: {
+																	display: true,
+																	labelString: 'Ratings'
+																}
+															}]
+														}
+													}
+												};
+
+											var ctx = document.getElementById("canvas").getContext("2d");
+											window.myLine = new Chart(ctx, config);
+												}
+													return new Promise(function(resolve,reject){
+										
+												snapshot.forEach
+												(
+						
+												function(childsnapshot)
+												{
+		
+												var data=childsnapshot.val();
+												console.log(data);
+												Dates_log.push(data.Dateval);
+												O_rating.push(data.Ovaerll);
+												Attitude.push(data.Attitude);
+												Cfocus.push(data.CustomerFocus);
+
+
+												}
+												
+												);
+												resolve(myfunction());
+												});
+									}
+								);
+							}
+						 }
+					);
+				}
+			);
+    }
+
+
+function callLogout()
+{
+
+ firebase.auth().signOut().then(function() {
+  alert("Do you wish to Log out");
+  window.location.href="../index.html";
+},
+
+ function(error) {
+ alert("Unable to logout");
+});
+
+
+}
+	</script>
+	
+	
+	
+	</body>
+
+
+</html>
