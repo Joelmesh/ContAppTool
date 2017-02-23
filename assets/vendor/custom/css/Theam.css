@@ -73,7 +73,7 @@ border: 1px solid #C22326;}
 .overall_rating_disp { overflow:hidden; margin:0 auto; padding:10px;text-align: center;}
 .overall_rating_disp h1 { margin:0px auto; padding:0px; text-align:center; color:#C22326; font-size:36px; line-height:2.6em; background:#fefefe;border-radius:100%;width: 2.6em;font-weight: 600;}
 .overall_rating_disp h1::before { content:""; display:block; border:10px solid #f6f6f6; border-radius:100%;/*!  */position: absolute;width: 2.6em;height: 2.6em;margin: 0 auto;}
-.overall_rating_disp h1::after {content:""; display:block; border:10px solid #d8d5d5; border-radius:100%;width: 3.1em;height: 3.1em;margin: 0px -9px;top: 0px;position: absolute;}
+.overall_rating_disp h1::after {content:""; display:block; border:10px solid #f9f9f9; border-radius:100%;width: 3.1em;height: 3.1em;margin: 0px -9px;top: 0px;position: absolute;}
 .overall_rating_disp h2 {margin:21px auto 0 auto; padding:0px; text-align:center; color:#C22326; font-size:1.2em; line-height:normal; font-weight: 500;display: block;}
 
 
@@ -228,16 +228,3 @@ padding: 0; background:#63717d;}
 }
 
 
-/****Rafi CSS*******/
-
-.notification-holder a {
-    color: #555;
-    font-size: 14px;
-    margin-bottom: 9px;
-    display: block;
-    padding-left: 7px;
-}
-
-.notification-holder a:hover {
-    color:#dd4b39;
-}

@@ -17,7 +17,6 @@
 						.then(function(firebaseUser) 
 						{
 						// Success 
-						console.log("seccess");
 						localStorage.setItem("Email",EmailVal);
 						func();
 						})
@@ -26,8 +25,7 @@
 						// Handle Errors here.
 						var errorCode = error.code;
 						var errorMessage = error.message;
-						console.log('Unable to Login ,Check Login details and try again!');
-						console.log(errorMessage);
+						alert(errorMessage);
 						});
 						}
 						function func()
