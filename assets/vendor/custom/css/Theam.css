@@ -194,7 +194,17 @@ padding: 0; background:#63717d;}
 }
 
 
-
+.form-group {overflow: hidden;}
+.control-label{line-height: 30px;}
+.table-border table, .table-border th, .table-border td{ border:1px solid #DDD !important;}
+.box_color { background:#f8f8f8; padding:10px 15px; margin:0px 0px 20px 0px; overflow:hidden; border-top:1px solid #f9f9f9; border-bottom:1px solid #DDD;}
+.box_color .form-group { margin:0px;}
+.box_color .form-control { padding:6px;}
+.table_whitespace table th { white-space: nowrap;}
+.table_whitespace table thead th {background: #6F88A1;color: #fff;}
+.table_whitespace table tbody th {background: #F5F5F5;color: #969696;border: 1px solid #EAEAEA;}
+.table_whitespace table tbody tr td:last-child {color: #787878;max-width: 280px;font-style: italic;}
+.onlick_table{ display:block;}
 /*===================================================
            R E S P O N S I V E  C O D E 
 ====================================================*/
