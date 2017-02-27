@@ -63,10 +63,10 @@
             <li class="treeview"><a href="index.html"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
             <li class="treeview"><a href="add_rating.html"><i class="fa fa-edit"></i> <span>Add Ratings</span></a></li>
             <li class="treeview"><a href="employeelist.html"><i class="fa fa-list"></i> <span>Emp List with Project</span></a></li>
-            <li class="treeview"><a href="weeklyreports.html"><i class="fa fa-pie-chart"></i> <span>Reports</span>
+            <li class="active treeview"><a href="#"><i class="fa fa-pie-chart"></i> <span>Reports</span>
                 <i class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu">                  
-                  	<li><a href="weeklyreports.html"><i class="fa fa-circle-o"></i> Weekly Report</a></li>
+                  	<li class="active"><a href="weeklyreports.html"><i class="fa fa-circle-o"></i> Weekly Report</a></li>
                     <li><a href="monthlyreports.html"><i class="fa fa-circle-o"></i> Monthly Reports</a></li>
                 </ul>
             </li>                    
@@ -76,44 +76,105 @@
 
 <!-- Content Wrapper -->
 <div class="content-wrapper">
-    <section class="content-header">
-        <h1>View Rating</small></h1>
+	<section class="content-header">
+    <h1>Weekly Reports</small></h1>
         <ol class="breadcrumb">
             <li><a href="index.html"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li><a href="view_rating.html">View Rating</a></li>
+            <li><a href="weeklyreports.html">Reports</a></li>
+			<li>Weekly Reports</li>
         </ol>
     </section>
 
     <section class="content">
-    	<div class="row">
+		<div class="row">
             <div class="col-md-12">
-                <div class="box box-info">                
-                    <div class="box-header with-border">
-						<h3 class="box-title">Choose options here</h3>
-                    </div>
-                    <br>
-                    
-                    <div class="row">
-                        <div class="col-sm-5">
-                            <div class="form-group">
-                                <label for="inputEmail3" class="col-sm-4 control-label text-right">Employees Name</label>                        
-                                <div class="col-sm-8">
-                                  <select class="form-control">
-                                    <option>Johan</option>
-                                    <option>David</option>
-                                    <option>Santosh</option>
-                                    <option>Steve</option>
-                                  </select>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <br>
+                <div class="box box-info">
+					<div class="box_color">
+						<div class="row">
+							<div class="col-sm-4">
+								<div class="form-group">
+									<label for="inputEmail3" class="col-sm-5 control-label">Employees List</label>                        
+									<div class="col-sm-7">
+										<select class="form-control">
+											<option>All</option>
+											<option>Muzeer</option>
+											<option>Santosh</option>
+											<option>Naveen</option>
+											<option>Joel</option>									
+											<option>Dipak</option>
+										</select>
+									</div>
+								</div>
+							</div>
+								
+							<!--<div class="col-sm-3">
+								<div class="form-group">
+									<label for="inputEmail3" class="col-sm-6 control-label text-right">Sort by Week</label>                        
+									<div class="col-sm-6">
+										<select class="form-control">
+											<option>All</option>
+											<option>Week 1</option>
+											<option>Week 2</option>
+											<option>Week 3</option>
+											<option>Week 4</option>
+										</select>
+									</div>
+								</div>
+							</div> -->
+								
+							<div class="col-sm-2 pull-right">
+								<button class="btn btn-primary pull-right" type=""><i class="glyphicon glyphicon-export icon-share"></i> Export</button>
+							</div>
+						</div>
+					</div>
+					
+					<div class="clearfix"></div>
+					<div class="col-md-12">
+						<div class="table-responsive">  
+							<table id="mytable" class="table table-hover table_action table-striped table-bordered">                   
+								<thead class="thead-inverse">
+									<tr>
+										<th><input type="checkbox" id="checkall" /></th>
+										<th>Emp ID</th>
+										<th>Employees Name</th>
+										<th>Emp Designation</th>											
+										<th>Week 1</th>
+										<th>Week 2</th>
+										<th>Week 3</th>
+										<th>Week 4</th>
+									</tr>
+								</thead>
+								<tbody>    
+									<tr>
+										<td><input type="checkbox" class="checkthis" /></td>
+										<td>002</td>
+										<td>Mohsin</td>
+										<td>Jr.Dev</td>
+										<td>3.5</td>
+										<td>2.0</td>
+										<td>5</td>											
+										<td>3.5</td>
+									</tr>  
+								 
+									<tr>
+										<td><input type="checkbox" class="checkthis" /></td>
+										<td>089</td>
+										<td>Nani</td>
+										<td>Sr.Dev</td>
+										<td>5</td>
+										<td>3.0</td>
+										<td>4.5</td>											
+										<td>1.5</td>
+									</tr>    
+								</tbody>										
+							</table>
+						</div>						
+					</div>						
                 </div>
             </div>
         </div>
-        
-        <div class="row">
+		</br>
+		<div class="row">
             <div class="col-md-12">
                 <div class="box">
                     <div class="box-header with-border">
@@ -125,14 +186,72 @@
                     </div>
                     
                     <div class="box-body">
-               	    	<div class="col-md-12">
-                        	<canvas id="canvas"></canvas>
+               	    	<div class="col-md-12"><iframe class="chartjs-hidden-iframe" style="display: block; overflow: hidden; border: 0px none; margin: 0px; top: 0px; left: 0px; bottom: 0px; right: 0px; height: 100%; width: 100%; position: absolute; pointer-events: none; z-index: -1;" tabindex="-1"></iframe>
+                        	<canvas id="canvas" style="display: block; width: 1009px; height: 504px;" width="1009" height="504"></canvas>
                         </div>
                     </div>
                 </div>
-            </div>
+			</div>
         </div>
-        <br>
+		<br>
+		<div class="row">
+            <div class="col-md-12">
+				<div class="onlick_table">
+					<div class="box box-warning">                
+						<div class="box-header with-border">
+							<h3 class="box-title">Employee Name</h3>
+						</div>
+						</br>
+						<div class="col-md-12">
+							<div class="table-responsive table_whitespace">  
+								<table class="table table-hover table_action">                   
+									<thead class="thead-inverse">
+										<tr>										
+											<th>Weeks</th>
+											<th>Attitude</th>
+											<th>Decipline</th>
+											<th>Met Deadline</th>
+											<th>Quality of Work</th>
+											<th>Customer Focus</th>
+											<th>Comments</th>
+										</tr>
+									</thead>
+									<tbody>    
+										<tr>
+											<th>Week 1</th>
+											<td>4</td>
+											<td>2.5</td>
+											<td>3.5</td>
+											<td>2.0</td>
+											<td>5</td>											
+											<td>such as screen readers.</td>
+										</tr>
+										<tr>
+											<th>Week 2</th>
+											<td>2.5</td>
+											<td>4</td>
+											<td>3.5</td>
+											<td>2.0</td>
+											<td>1.5</td>											
+											<td>none</td>
+										</tr>
+										<tr>
+											<th>Week 2</th>
+											<td>4</td>
+											<td>4.5</td>
+											<td>3.5</td>
+											<td>5</td>
+											<td>3.5</td>											
+											<td>Using color to add meaning to a table row or individual cell only provides a visual indication, which will not be conveyed to users of assistive technologies – such as screen readers.</td>
+										</tr>
+									</tbody>										
+								</table>
+							</div>						
+						</div>						
+					</div>
+				</div>
+			</div>
+        </div>        
     </section>
 </div>
     
@@ -154,12 +273,31 @@
 <script src="assets/vendor/bootstrap/js/lib/jquery/jquery-2.0.3.min.js"></script>
 <script src="assets/vendor/bootstrap/js/lib/bootstrap/bootstrap.js"></script>
 
+<script>
+$(document).ready(function(){
+$("#mytable #checkall").click(function () {
+        if ($("#mytable #checkall").is(':checked')) {
+            $("#mytable input[type=checkbox]").each(function () {
+                $(this).prop("checked", true);
+            });
+
+        } else {
+            $("#mytable input[type=checkbox]").each(function () {
+                $(this).prop("checked", false);
+            });
+        }
+    });
+    
+    $("[data-toggle=tooltip]").tooltip();
+});
+
+</script>
 <!-- Custom jQuery -->
 <script src="assets/vendor/custom/js/jquery.slimscroll.min.js"></script>
 <script src="assets/vendor/custom/js/app.min.js"></script>
+
 <script src="assets/vendor/custom/js/graph_ctrl.js"></script>
 <script src="assets/vendor/custom/js/graph.js"></script>
-
 <script>
         var MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
         var config = {
@@ -293,6 +431,5 @@
             window.myLine.update();
         });
 </script>
-
 </body>
 </html>
