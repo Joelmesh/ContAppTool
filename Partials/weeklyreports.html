@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Reports</title>
+
+
+    <link href="../assets/vendor/custom/css/main.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+    <header class="main-header">
+        <!-- Logo -->
+        <a href="dashboard.html" class="logo">
+            <!-- mini logo for sidebar mini 50x50 pixels -->
+            <span class="logo-mini"><b> <img src="../images/Benison_icon.png" alt=""/></b></span>
+            <!-- logo for regular state and mobile devices -->
+            <span class="logo-lg"><b><img src="../images/Benison_icon.png" alt=""/>ENISON</b></span>
+        </a>
+
+        <!-- Header Navbar -->
+        <nav class="navbar navbar-static-top" role="navigation">
+            <!-- Sidebar toggle button-->
+            <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button"><span class="sr-only">Toggle navigation</span></a>
+
+            <div class="navbar-custom-menu">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown user user-menu"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="fausericon"><i class="fa fa-user"></i></span><span class="hidden-xs_new"><script>var Name=localStorage.getItem("Email");document.write(Name);</script></span> &nbsp;<i class="fa fa-caret-down"></i></a>
+                        <ul class="dropdown-menu dropdown-menunw  animated fadeInDown pull-right">
+                            <li><a href="#">Profile</a></li>
+                            <li><a href="#">Settings</a></li>
+                            <li><a href="" onclick="callLogout()"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Left side column. contains the logo and sidebar -->
+    <aside class="main-sidebar">
+        <section class="sidebar">
+            <div class="user-panel">
+                <h2>Continuos Appraisal</h2>
+            </div>
+
+            <!-- sidebar menu: -->
+            <ul class="sidebar-menu" id="Main_Menu">
+                <li class="treeview"><a href="dashboard.html"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
+                <li class="treeview"><a href="Add_ratings_direct.html"><i class="fa fa-edit"></i> <span>Add Ratings</span></a></li>
+                <li class="treeview"><a href="Myview.html"><i class="fa fa-edit"></i> <span>My View</span></a></li>
+               <!-- <li class="treeview"><a href="employeelist.html"><i class="fa fa-list"></i> <span>Emp List with Project</span></a></li>-->
+                <li class="active treeview"><a href="#"><i class="fa fa-pie-chart"></i> <span>Reports</span>
+                    <i class="fa fa-angle-left pull-right"></i></a>
+                    <ul class="treeview-menu">
+                        <li class="active"><a href="weeklyreports.html"><i class="fa fa-circle-o"></i> Weekly Report</a></li>
+                       <!-- <li><a href="monthlyreports.html"><i class="fa fa-circle-o"></i> Monthly Reports</a></li>-->
+
+                    </ul>
+                </li>
+            </ul>
+        </section>
+    </aside>
+    <div id="loaderspinner">
+        <div id="circularG">
+            <div id="circularG_1" class="circularG"></div>
+            <div id="circularG_2" class="circularG"></div>
+            <div id="circularG_3" class="circularG"></div>
+            <div id="circularG_4" class="circularG"></div>
+            <div id="circularG_5" class="circularG"></div>
+            <div id="circularG_6" class="circularG"></div>
+            <div id="circularG_7" class="circularG"></div>
+            <div id="circularG_8" class="circularG"></div>
+        </div>
+    </div>
+    <!-- Content Wrapper -->
+    <div class="content-wrapper">
+        <section class="content-header">
+            <h1>Weekly Reports</small></h1>
+            <ol class="breadcrumb">
+                <li><a href="index.html"><i class="fa fa-dashboard"></i> Home</a></li>
+                <li><a href="weeklyreports.html">Reports</a></li>
+                <li>Weekly Reports</li>
+            </ol>
+        </section>
+
+        <section class="content">
+            <div class="row" id="fill">
+
+                <div class="col-md-12">
+                    <div class="box box-info">
+                        <div class="box_color">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <label for="inputEmail3" class="col-sm-5 control-label">Employees List</label>
+                                        <div class="col-sm-7" id="fill_dropdown">
+                                          <!--  <select class="form-control">
+                                                <option>All</option>
+                                                <option>Muzeer</option>
+                                                <option>Santosh</option>
+                                                <option>Naveen</option>
+                                                <option>Joel</option>
+                                                <option>Dipak</option>
+                                            </select>-->
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                <label id="Select_emp" class="emp_textshow"><i class="fa fa-warning text-yellow"></i> Please select an Employee to view details</label>
+                                </div>
+
+                                <!--<div class="col-sm-3">
+                                    <div class="form-group">
+                                        <label for="inputEmail3" class="col-sm-6 control-label text-right">Sort by Week</label>
+                                        <div class="col-sm-6">
+                                            <select class="form-control">
+                                                <option>All</option>
+                                                <option>Week 1</option>
+                                                <option>Week 2</option>
+                                                <option>Week 3</option>
+                                                <option>Week 4</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div> -->
+
+                                <div class="col-sm-2 pull-right">
+                                    <button class="btn btn-primary pull-right" type="" onclick="callExport()"><i class="glyphicon glyphicon-export icon-share"></i> Export</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="clearfix"></div>
+                        <div class="col-md-12" >
+                           <div class="table-responsive"  id="table_info">
+                               <!-- <table id="mytable" class="table table-hover table_action table-striped table-bordered">
+                                    <thead class="thead-inverse">
+                                    <tr>
+                                        <th><input type="checkbox" id="checkall" /></th>
+                                        <th>Emp ID</th>
+                                        <th>Employees Name</th>
+                                        <th>Emp Designation</th>
+                                        <th>Week 1</th>
+                                        <th>Week 2</th>
+                                        <th>Week 3</th>
+                                        <th>Week 4</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td><input type="checkbox" class="checkthis" /></td>
+                                        <td>002</td>
+                                        <td>Mohsin</td>
+                                        <td>Jr.Dev</td>
+                                        <td>3.5</td>
+                                        <td>2.0</td>
+                                        <td>5</td>
+                                        <td>3.5</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td><input type="checkbox" class="checkthis" /></td>
+                                        <td>089</td>
+                                        <td>Nani</td>
+                                        <td>Sr.Dev</td>
+                                        <td>5</td>
+                                        <td>3.0</td>
+                                        <td>4.5</td>
+                                        <td>1.5</td>
+                                    </tr>
+                                    </tbody>
+                                </table>-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </br>
+            <div class="row">
+                <div class="col-md-12" id="Export_Detail">
+                    <div class="onlick_table">
+                        <div class="box box-warning">
+                            <div class="box-header with-border">
+                                <h3 class="box-title">Employee Name:</h3>
+                                <label id="EName_print"></label>
+                            </div>
+                            </br>
+                            <div class="col-md-12">
+                                <div class="table-responsive table_whitespace" id="TableDetail">
+                                    <!--<table class="table table-hover table_action">
+                                        <thead class="thead-inverse">
+                                        <tr>
+                                            <th>Weeks</th>
+                                            <th>Attitude</th>
+                                            <th>Decipline</th>
+                                            <th>Met Deadline</th>
+                                            <th>Quality of Work</th>
+                                            <th>Customer Focus</th>
+                                            <th>Comments</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <th>Week 1</th>
+                                            <td>4</td>
+                                            <td>2.5</td>
+                                            <td>3.5</td>
+                                            <td>2.0</td>
+                                            <td>5</td>
+                                            <td>such as screen readers.</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Week 2</th>
+                                            <td>2.5</td>
+                                            <td>4</td>
+                                            <td>3.5</td>
+                                            <td>2.0</td>
+                                            <td>1.5</td>
+                                            <td>none</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Week 2</th>
+                                            <td>4</td>
+                                            <td>4.5</td>
+                                            <td>3.5</td>
+                                            <td>5</td>
+                                            <td>3.5</td>
+                                            <td>Using color to add meaning to a table row or individual cell only provides a visual indication, which will not be conveyed to users of assistive technologies – such as screen readers.</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                                  <div class="box">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">Employee Name:</h3>
+                            <label id="E_Name"></label>
+
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+
+                        <div class="box-body">
+                            <div class="col-md-12"><iframe class="chartjs-hidden-iframe" style="display: block; overflow: hidden; border: 0px none; margin: 0px; top: 0px; left: 0px; bottom: 0px; right: 0px; height: 100%; width: 100%; position: absolute; pointer-events: none; z-index: -1;" tabindex="-1"></iframe>
+                                <canvas id="canvas" style="display: block; width: 1009px; height: 504px;" width="1009" height="504"></canvas>
+                                <canvas id="canvas2" style="display: block; width: 1009px; height: 504px;" width="1009" height="504"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+
+        </section>
+    </div>
+
+
+    <footer class="main-footer">
+        <div class="hidden-xs">
+            <div class="col-md-12">
+                <div class="footer_nav_text">All Copyright © 2014 - 2017 Benison Technologies</div>
+            </div>
+        </div>
+    </footer>
+</div>
+<script src="../assets/vendor/bootstrap/js/lib/jquery/jquery.js"></script>
+<!-- jQuery 2.2.0 -->
+<script src="../assets/vendor/bootstrap/js/lib/jquery/jquery-2.0.3.min.js"></script>
+<script src="../assets/vendor/bootstrap/js/lib/bootstrap/bootstrap.js"></script>
+<!---Firebase Integration-->
+<script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
+<script src="https://cdn.firebase.com/v0/firebase-simple-login.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/3.7.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCttIvURKJSZu1oG77jRhtOian0PDQnL4I",
+    authDomain: "benisonapraisal.firebaseapp.com",
+    databaseURL: "https://benisonapraisal.firebaseio.com",
+    storageBucket: "benisonapraisal.appspot.com",
+    messagingSenderId: "235902763929"
+  };
+  firebase.initializeApp(config);
+</script>
+<script>
+$(document).ready(function(){
+$("#mytable #checkall").click(function () {
+        if ($("#mytable #checkall").is(':checked')) {
+            $("#mytable input[type=checkbox]").each(function () {
+                $(this).prop("checked", true);
+            });
+
+        } else {
+            $("#mytable input[type=checkbox]").each(function () {
+                $(this).prop("checked", false);
+            });
+        }
+    });
+
+    $("[data-toggle=tooltip]").tooltip();
+});
+
+</script>
+<!-- Custom jQuery -->
+<script src="../assets/vendor/custom/js/jquery.slimscroll.min.js"></script>
+<script src="../assets/vendor/custom/js/app.min.js"></script>
+
+<script src="../assets/vendor/custom/js/graph_ctrl.js"></script>
+<script src="../assets/vendor/custom/js/graph.js"></script>
+<script src="../js/weekly_report.js"></script>
+
+<!---for JSPdf------------>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.debug.js"></script>
+
+</body>
+</html>

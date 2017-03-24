@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Add-Rating</title>
+
+
+    <link rel="stylesheet" type="text/css" href="../assets/vendor/custom/css/main.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+
+<script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
+<script src="https://cdn.firebase.com/v0/firebase-simple-login.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/3.7.0/firebase.js"></script>
+
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCttIvURKJSZu1oG77jRhtOian0PDQnL4I",
+    authDomain: "benisonapraisal.firebaseapp.com",
+    databaseURL: "https://benisonapraisal.firebaseio.com",
+    storageBucket: "benisonapraisal.appspot.com",
+    messagingSenderId: "235902763929"
+  };
+  firebase.initializeApp(config);
+</script>
+
+<script src="../js/Add_ratingdirect.js">	</script>
+<div class="wrapper">
+    <header class="main-header">
+        <!-- Logo -->
+        <a href="dashboard.html" class="logo">
+            <!-- mini logo for sidebar mini 50x50 pixels -->
+
+            <span class="logo-mini"><b> <img src="../images/Benison_icon.png" alt=""/></b></span>
+
+            <!-- logo for regular state and mobile devices -->
+            <span class="logo-lg"><b><img src="../images/Benison_icon.png" alt=""/>ENISON</b></span>
+        </a>
+
+        <!-- Header Navbar -->
+        <nav class="navbar navbar-static-top" role="navigation">
+            <!-- Sidebar toggle button-->
+            <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button"><span class="sr-only">Toggle navigation</span></a>
+
+            <div class="navbar-custom-menu">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown user user-menu">
+
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="fausericon"><i class="fa fa-user"></i></span><span class="hidden-xs_new"><script>callName()</script></span> &nbsp;<i class="fa fa-caret-down"></i></a>
+
+                        <ul class="dropdown-menu dropdown-menunw  animated fadeInDown pull-right">
+                            <li><a href="#">Profile</a></li>
+                            <li><a href="#">Settings</a></li>
+                            <li><a href="#" onclick="callLogout()"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Left side column. contains the logo and sidebar -->
+    <aside class="main-sidebar">
+        <section class="sidebar">
+            <div class="user-panel">
+                <h2>Continous Appraisal</h2>
+            </div>
+
+            <!-- sidebar menu: -->
+            <ul class="sidebar-menu" id="Main_Menu">
+                <li class="treeview"><a href="dashboard.html"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
+                <li class="active treeview"><a href="add_rating.html"><i class="fa fa-edit"></i> <span>Add Ratings</span></a></li>
+                <li class="treeview"><a href="Myview.html"><i class="fa fa-edit"></i> <span>My View</span></a></li>
+                <!-- <li class="treeview"><a href="employeelist.html"><i class="fa fa-list"></i> <span>Emp List with Project</span></a></li>-->
+                <li class="treeview"><a href="#"><i class="fa fa-pie-chart"></i> <span>Reports</span>
+                     <i class="fa fa-angle-left pull-right"></i></a>
+                     <ul class="treeview-menu">
+                           <li><a href="weeklyreports.html"><i class="fa fa-circle-o"></i> Weekly Report</a></li>
+                         <!--<li><a href="#"><i class="fa fa-circle-o"></i> Monthly Reports</a></li>
+                         <li><a href="#"><i class="fa fa-circle-o"></i> Yearly Reports </a></li>-->
+                     </ul>
+                 </li>
+            </ul>
+        </section>
+    </aside>
+    <div id="loaderspinner">
+        <div id="circularG">
+            <div id="circularG_1" class="circularG"></div>
+            <div id="circularG_2" class="circularG"></div>
+            <div id="circularG_3" class="circularG"></div>
+            <div id="circularG_4" class="circularG"></div>
+            <div id="circularG_5" class="circularG"></div>
+            <div id="circularG_6" class="circularG"></div>
+            <div id="circularG_7" class="circularG"></div>
+            <div id="circularG_8" class="circularG"></div>
+        </div>
+    </div>
+    <!-- Content Wrapper -->
+    <div class="content-wrapper">
+        <section class="content-header">
+            <h1>Add Rating</small></h1>
+            <ol class="breadcrumb">
+                <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+                <li><a href="#">Add Rating of Employee</a></li>
+            </ol>
+        </section>
+
+        <section class="content">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="box">
+                        <div class="box-header with-border" id="Append_ddown">
+                            <h3 class="box-title">Add Rating to Employee</h3>
+                            <div class="pull-right">
+                                <label id="Select_emp" class="emp_textshow"><i class="fa fa-warning text-yellow"></i> Please select an Employee name to view rating dates</label>
+                            </div>
+                            <div class="box-tools2 pull-right" id="Date_placeholder">
+                            <!--<div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="inputEmail3" class="col-sm-5 control-label text-right">Date</label>
+                                    <div class="col-sm-6" id="Datehold">
+
+                                    </div>
+                                </div> -->
+                            </div>
+                          </div>
+                            <div class="box-tools2 pull-right">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="inputEmail3" class="col-sm-3 control-label text-right"></label>
+                                        <div class="col-sm-9" id="Datehold">
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="box-body">
+                            <div class="col-md-12">
+                                <div class="row">
+                                    <div class="col-md-2 col-sm-offset-1">
+                                        <div class="userinfo_rat">
+                                            <i class="fa fa-user" aria-hidden="true"></i>
+                                            <label id="E_Name"></label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="rating_holder">
+                                            <div class="col-md-4"><h1>discipline</h1></div>
+                                            <div class="col-md-8">
+                                                <fieldset class="rating">
+                                                    <input type="radio" id="star51" name="rating1" value="5" onchange="callLabel()"/>
+                                                    <label class = "full" for="star51" title="Awesome - 5 stars"></label>
+
+                                                    <!--<input type="radio" id="star4half1" name="rating1" value="4.5" />
+                                                    <label class="half" for="star4half1" title="Pretty good - 4.5 stars"></label>-->
+
+                                                    <input type="radio" id="star41" name="rating1" value="4" onchange="callLabel()"/>
+                                                    <label class = "full" for="star41" title="Pretty good - 4 stars"></label>
+
+                                                    <!--<input type="radio" id="star3half1" name="rating1" value="3.5" />
+                                                    <label class="half" for="star3half1" title="Meh - 3.5 stars"></label>-->
+
+                                                    <input type="radio" id="star31" name="rating1" value="3" onchange="callLabel()"/>
+                                                    <label class = "full" for="star31" title="Efforts made - 3 stars"></label>
+
+                                                    <!--<input type="radio" id="star2half1" name="rating1" value="2.5" />
+                                                    <label class="half" for="star2half1" title="Kinda bad - 2.5 stars"></label>-->
+
+                                                    <input type="radio" id="star21" name="rating1" value="2" onchange="callLabel()"/>
+                                                    <label class = "full" for="star21" title="try and improve- 2 stars"></label>
+
+                                                    <!--<input type="radio" id="star1half" name="rating1" value="1.5" />
+                                                    <label class="half" for="star1half" title="Meh - 1.5 stars"></label>-->
+
+                                                    <input type="radio" id="star11" name="rating1" value="1" onchange="callLabel()"/>
+                                                    <label class = "full" for="star11" title="Oh no-1 star"></label>
+
+                                                    <!--<input type="radio" id="starhalf1" name="rating1" value="0.5" />
+                                                    <label class="half" for="starhalf1" title="Sucks big time - 0.5 stars"></label>-->
+                                                </fieldset>
+                                                <h3 id="placeDcsp"></h3>
+                                            </div>
+                                        </div>
+
+                                        <div class="rating_holder">
+                                            <div class="col-md-4"><h1>Attitude</h1></div>
+                                            <div class="col-md-8">
+                                                <fieldset class="rating">
+                                                    <input type="radio" id="star52" name="rating2" value="5" onchange="callLabel()"/>
+                                                    <label class = "full" for="star52" title="Awesome - 5 stars"></label>
+
+                                                    <!--<input type="radio" id="star4half" name="rating2" value="4 and a half" />
+                                                    <label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>-->
+
+                                                    <input type="radio" id="star42" name="rating2" value="4" onchange="callLabel()"/>
+                                                    <label class = "full" for="star42" title="Pretty good - 4 stars"></label>
+
+                                                    <!-- <input type="radio" id="star3half2" name="rating2" value="3 and a half" />
+                                                     <label class="half" for="star3half2" title="Meh - 3.5 stars"></label>-->
+
+                                                    <input type="radio" id="star32" name="rating2" value="3" onchange="callLabel()"/>
+                                                    <label class = "full" for="star32" title="Efforts made - 3 stars"></label>
+
+                                                    <!--<input type="radio" id="star2half2" name="rating2" value="2 and a half" />
+                                                    <label class="half" for="star2half2" title="Kinda bad - 2.5 stars"></label>-->
+
+                                                    <input type="radio" id="star22" name="rating2" value="2" onchange="callLabel()"/>
+                                                    <label class = "full" for="star22" title="try and improve- 2 stars"></label>
+
+                                                    <!-- <input type="radio" id="star1half2" name="rating" value="1 and a half" />
+                                                     <label class="half" for="star1half2" title="Meh - 1.5 stars"></label> -->
+
+                                                    <input type="radio" id="star12" name="rating2" value="1"  onchange="callLabel()"/>
+                                                    <label class = "full" for="star12" title="Oh no-1 star"></label>
+
+                                                    <!-- <input type="radio" id="starhalf2" name="rating2" value="half" />
+                                                     <label class="half" for="starhalf2" title="Sucks big time - 0.5 stars"></label>-->
+                                                </fieldset>
+                                                <h3 id="ratedisplayAtt"></h3>
+                                            </div>
+                                        </div>
+
+                                        <div class="rating_holder">
+                                            <div class="col-md-4"><h1>Quality of Work</h1></div>
+                                            <div class="col-md-8">
+                                                <fieldset class="rating">
+                                                    <input type="radio" id="star53" name="rating3" value="5" onchange="callLabel()"/>
+                                                    <label class = "full" for="star53" title="Awesome - 5 stars"></label>
+
+                                                    <!--<input type="radio" id="star4half3" name="rating3" value="4 and a half" />
+                                                    <label class="half" for="star4half3" title="Pretty good - 4.5 stars"></label>-->
+
+                                                    <input type="radio" id="star43" name="rating3" value="4" onchange="callLabel()"/>
+                                                    <label class = "full" for="star43" title="Pretty good - 4 stars"></label>
+
+                                                    <!-- <input type="radio" id="star3half3" name="rating3" value="3 and a half" />
+                                                     <label class="half" for="star3half3" title="Meh - 3.5 stars"></label> -->
+
+                                                    <input type="radio" id="star33" name="rating3" value="3" onchange="callLabel()"/>
+                                                    <label class = "full" for="star33" title="Efforts made - 3 stars"></label>
+
+                                                    <!--<input type="radio" id="star2half3" name="rating3" value="2 and a half" />
+                                                    <label class="half" for="star2half3" title="Kinda bad - 2.5 stars"></label>-->
+
+                                                    <input type="radio" id="star23" name="rating3" value="2" onchange="callLabel()"/>
+                                                    <label class = "full" for="star23" title="try and improve- 2 stars"></label>
+
+                                                    <!--<input type="radio" id="star1half3" name="rating3" value="1 and a half" />
+                                                    <label class="half" for="star1half3" title="Meh - 1.5 stars"></label>-->
+
+                                                    <input type="radio" id="star13" name="rating3" value="1" onchange="callLabel()"/>
+                                                    <label class = "full" for="star13" title="Oh no-1 star"></label>
+
+                                                    <!--<input type="radio" id="starhalf3" name="rating3" value="half" />
+                                                    <label class="half" for="starhalf3" title="Sucks big time - 0.5 stars"></label>-->
+                                                </fieldset>
+                                                <h3 id="ratedisplayQual"></h3>
+                                            </div>
+                                        </div>
+
+                                        <div class="rating_holder">
+                                            <div class="col-md-4"><h1>Met Deadline</h1></div>
+                                            <div class="col-md-8">
+                                                <fieldset class="rating">
+                                                    <input type="radio" id="star54" name="rating4" value="5" onchange="callLabel()" />
+                                                    <label class = "full" for="star54" title="Awesome - 5 stars"></label>
+
+                                                    <!--<input type="radio" id="star4half4" name="rating4" value="4 and a half" />
+                                                    <label class="half" for="star4half4" title="Pretty good - 4.5 stars"></label>-->
+
+                                                    <input type="radio" id="star44" name="rating4" value="4" onchange="callLabel()" />
+                                                    <label class = "full" for="star44" title="Pretty good - 4 stars"></label>
+
+                                                    <!--<input type="radio" id="star3half4" name="rating" value="3 and a half" />
+                                                    <label class="half" for="star3half4" title="Meh - 3.5 stars"></label>-->
+
+                                                    <input type="radio" id="star34" name="rating4" value="3" onchange="callLabel()" />
+                                                    <label class = "full" for="star34" title="Efforts made - 3 stars"></label>
+
+                                                    <!--<input type="radio" id="star2half4" name="rating4" value="2 and a half" />
+                                                    <label class="half" for="star2half4" title="Kinda bad - 2.5 stars"></label>-->
+
+                                                    <input type="radio" id="star24" name="rating4" value="2" onchange="callLabel()" />
+                                                    <label class = "full" for="star24" title="try and improve- 2 stars"></label>
+
+                                                    <!--<input type="radio" id="star1half4" name="rating4" value="1 and a half" />
+                                                    <label class="half" for="star1half4" title="Meh - 1.5 stars"></label>-->
+
+                                                    <input type="radio" id="star14" name="rating4" value="1" onchange="callLabel()" />
+                                                    <label class = "full" for="star14" title="Oh no-1 star"></label>
+
+                                                    <!--<input type="radio" id="starhalf4" name="rating4" value="half" />
+                                                    <label class="half" for="starhalf4" title="Sucks big time - 0.5 stars"></label>-->
+                                                </fieldset>
+                                                <h3 id="placeholdMET"></h3>
+                                            </div>
+                                        </div>
+
+                                        <div class="rating_holder">
+                                            <div class="col-md-4"><h1>Customer Focus</h1></div>
+                                            <div class="col-md-8">
+                                                <fieldset class="rating">
+                                                    <input type="radio" id="star55" name="rating5" value="5" onchange="callLabel()"/>
+                                                    <label class = "full" for="star55" title="Awesome - 5 stars"></label>
+
+                                                    <!--<input type="radio" id="star4half5" name="rating5" value="4 and a half" />
+                                                    <label class="half" for="star4half5" title="Pretty good - 4.5 stars"></label>-->
+
+                                                    <input type="radio" id="star45" name="rating5" value="4" onchange="callLabel()" />
+                                                    <label class = "full" for="star45" title="Pretty good - 4 stars"></label>
+
+                                                    <!--<input type="radio" id="star3half5" name="rating5" value="3 and a half" />
+                                                    <label class="half" for="star3half5" title="Meh - 3.5 stars"></label>-->
+
+                                                    <input type="radio" id="star35" name="rating5" value="3"onchange="callLabel()"/>
+                                                    <label class = "full" for="star35" title="Efforts made - 3 stars""></label>
+
+                                                    <!--<input type="radio" id="star2half5" name="rating5" value="2 and a half" />
+                                                    <label class="half" for="star2half5" title="Kinda bad - 2.5 stars"></label>-->
+
+                                                    <input type="radio" id="star25" name="rating5" value="2" onchange="callLabel()"/>
+                                                    <label class = "full" for="star25" title="try and improve- 2 stars"></label>
+
+                                                    <!--<input type="radio" id="star1half5" name="rating5" value="1 and a half" />
+                                                    <label class="half" for="star1half5" title="Meh - 1.5 stars"></label>-->
+
+                                                    <input type="radio" id="star15" name="rating" value="1"onchange="callLabel()"/>
+                                                    <label class = "full" for="star15" title="Oh no-1 star"></label>
+
+                                                    <!--<input type="radio" id="starhalf5" name="rating5" value="half" />
+                                                    <label class="half" for="starhalf5" title="Sucks big time - 0.5 stars"></label>-->
+                                                </fieldset>
+                                                <h3 id="Cfocus"></h3>
+                                            </div>
+                                        </div>
+
+                                        <!--<div class="rating_holder">
+                                            <div class="col-md-4"><h1>Initiative</h1></div>
+                                            <div class="col-md-8">
+                                                <fieldset class="rating">
+                                                    <input type="radio" id="star50" name="rating" value="5" onchange="callLabel()"/>
+                                                    <label class = "full" for="star5" title="Awesome - 5 stars"></label>
+
+                                                    <!--<input type="radio" id="star4half" name="rating" value="4 and a half" />
+                                                    <label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>-->
+
+                                        <!--<input type="radio" id="star40" name="rating" value="4" />
+                                        <label class = "full" for="star4" title="Pretty good - 4 stars"></label>
+
+                                        <!--<input type="radio" id="star3half" name="rating" value="3 and a half" />
+                                        <label class="half" for="star3half" title="Meh - 3.5 stars"></label>-->
+
+                                        <!--<input type="radio" id="star30" name="rating" value="3" />
+                                        <label class = "full" for="star3" title="Meh - 3 stars"></label>
+
+                                        <!--<input type="radio" id="star2half" name="rating" value="2 and a half" />
+                                        <label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>-->
+
+                                        <!--<input type="radio" id="star20" name="rating" value="2" />
+                                        <label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
+
+                                        <!--<input type="radio" id="star1half" name="rating" value="1 and a half" />
+                                        <label class="half" for="star1half" title="Meh - 1.5 stars"></label>-->
+
+                                        <!--<input type="radio" id="star1" name="rating" value="1" />
+                                        <label class = "full" for="star1" title="Sucks big time - 1 star"></label>
+
+                                        <!--<input type="radio" id="" name="rating" value="half" />
+                                        <label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>-->
+                                        <!--</fieldset>
+                                        <h3></h3>
+                                    </div>
+                                </div>-->
+                                    </div>
+
+                                    <div class="col-md-3">
+                                        <div class="overall_rating_disp" id="overall_disp">
+                                            <h1 id="Overh"></h1>
+                                            <h2>Overall Rating</h2>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="clearfix"></div>
+                                <hr>
+                                <div class="clearfix"></div>
+                                <div class="col-md-9 col-sm-offset-1">
+                                    <div class="form-group">
+                                        <label for="inputEmail3" class="col-sm-2 control-label text-right">Comments</label>
+                                        <div class="col-sm-10">
+                                            <textarea class="form-control" name="comments" id="Msgbox" rows="3" placeholder="" value=""></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="clearfix"></div><br>
+                                <br>
+
+
+                                <div class="col-md-12">
+                                    <div class="col-md-7 col-sm-offset-3"><button type="submit" class="btn btn-info col-md-6 pull-right" onclick="Savedata()">Submit</button></div>
+                                </div>
+                            </div>
+
+                            <!--<div class="col-lg-12">
+                                <div class="alert alert-success fade in">
+                                    <a href="#" class="close" data-dismiss="alert">&times;</a>
+                                    <strong>Success!</strong> Your message has been sent successfully.
+                                </div>
+                            </div>-->
+
+                            <br><br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+    <footer class="main-footer">
+        <div class="hidden-xs">
+            <div class="col-md-12">
+                <div class="footer_nav_text">All Copyright © 2014 - 2017 Benison Technologies</div>
+            </div>
+        </div>
+    </footer>
+</div>
+
+
+
+<script src="../assets/vendor/bootstrap/js/lib/jquery/jquery.js"></script>
+<!-- jQuery 2.2.0 -->
+<script src="../assets/vendor/bootstrap/js/lib/jquery/jquery-2.0.3.min.js"></script>
+<script src="../assets/vendor/bootstrap/js/lib/bootstrap/bootstrap.js"></script>
+
+<!-- Custom jQuery -->
+<script src="../assets/vendor/custom/js/jquery.slimscroll.min.js"></script>
+<script src="../assets/vendor/custom/js/app.min.js"></script>
+
+</body>
+</html>

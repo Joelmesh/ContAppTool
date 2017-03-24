@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <table id="location">
+    <thead bgcolor="#33ACFF">
+    <tr>
+        <th>Employee Name</th>
+        <th>EID</th>
+        <th>Designation</th>
+        <!--<th>Reporting</th>-->
+        <th>Actions</th>
+
+    </tr>
+    </thead>
+    <tbody>
+
+
+    </tbody>
+
+</table>
+<button onclick="Call()"> click </button>
+
+
+<script>
+
+function Call()
+{
+console.log("called call");
+//var tb = document.getElementById("location");
+//tb.getElementsByTagName("th")[3].style.display = "none";
+
+   var tblHeadObj = document.getElementById("location").tHead;
+
+	for (var h=0; h<tblHeadObj.rows.length; h++)
+	{
+		var newTH = document.createElement('th');
+		tblHeadObj.rows[h].appendChild(newTH);
+		newTH.innerHTML = "Reporting to";
+	}
+
+/*var tblHeadObj = document.getElementById("location");
+var newTH = document.createElement('th');
+newTH.innerHTML ="Reporting";
+tblHeadObj.tHead.append(newTH);*/
+}
+</script>
+</body>
+</html>
