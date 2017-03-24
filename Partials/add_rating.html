@@ -8,7 +8,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>Welcome to Continue Appraisel form</title>
+<title>Add-Rating</title>
 
 
 <link rel="stylesheet" type="text/css" href="../assets/vendor/custom/css/main.css">
@@ -26,28 +26,29 @@
 
 		<script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
 		<script src="https://cdn.firebase.com/v0/firebase-simple-login.js"></script>
-		<script src="https://www.gstatic.com/firebasejs/3.6.7/firebase.js"></script>
-		<script>
-		  // Initialize Firebase
-		 var config = {
-						apiKey: "AIzaSyDrW6XRPqaLSLvy3gPWTtxkKazrmo8LlTI",
-						authDomain: "apraisalstaging.firebaseapp.com",
-						databaseURL: "https://apraisalstaging.firebaseio.com",
-						storageBucket: "apraisalstaging.appspot.com",
-						messagingSenderId: "376417868003"
-					  };
-		  firebase.initializeApp(config);
-		  var Nlogin=localStorage.getItem("Email"); 
-		</script>		
-		<script src="../js/AddRatingValues.js">	</script>
+        <script src="https://www.gstatic.com/firebasejs/3.7.0/firebase.js"></script>
+
+         <script>
+          // Initialize Firebase
+          var config = {
+            apiKey: "AIzaSyCttIvURKJSZu1oG77jRhtOian0PDQnL4I",
+            authDomain: "benisonapraisal.firebaseapp.com",
+            databaseURL: "https://benisonapraisal.firebaseio.com",
+            storageBucket: "benisonapraisal.appspot.com",
+            messagingSenderId: "235902763929"
+          };
+          firebase.initializeApp(config);
+        </script>
+
+        <script src="../js/AddRatingValues.js">	</script>
 	<div class="wrapper">
 	<header class="main-header">
     <!-- Logo -->
-    <a href="index.html" class="logo">
+    <a href="dashboard.html" class="logo">
     <!-- mini logo for sidebar mini 50x50 pixels -->
     <span class="logo-mini"><b> <img src="../images/Benison_icon.png" alt=""/></b></span>
     <!-- logo for regular state and mobile devices -->
-    <span class="logo-lg"><b><img src="../images/Benison_icon.png" alt=""/> BENISON</b></span>
+    <span class="logo-lg"><b><img src="../images/Benison_icon.png" alt=""/>ENISON</b></span>
     </a>
 
     <!-- Header Navbar -->
@@ -77,18 +78,22 @@
         </div>
       
       	<!-- sidebar menu: -->
-        <ul class="sidebar-menu">
+        <ul class="sidebar-menu" id="Main_Menu">
             <li class="treeview"><a href="dashboard.html"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
             <li class="active treeview"><a href="add_rating.html"><i class="fa fa-edit"></i> <span>Add Ratings</span></a></li>
+            <li class="treeview"><a href="Myview.html"><i class="fa fa-edit"></i> <span>My View</span></a></li>
+            <li class="treeview"><a href="Add_ratings_direct.html"><i class="fa fa-edit"></i> <span>Rate Multiple Employee  </span></a></li>
+
            <!-- <li class="treeview"><a href="employeelist.html"><i class="fa fa-list"></i> <span>Emp List with Project</span></a></li>-->
-           <!--<li class="treeview"><a href="#"><i class="fa fa-pie-chart"></i> <span>Reports</span>
+           <li class="treeview"><a href="#"><i class="fa fa-pie-chart"></i> <span>Reports</span>
                 <i class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu">                  
-                  	<li><a href="#"><i class="fa fa-circle-o"></i> Weekly Report</a></li>
-                    <li><a href="#"><i class="fa fa-circle-o"></i> Monthly Reports</a></li>
-                    <li><a href="#"><i class="fa fa-circle-o"></i> Yearly Reports </a></li>
+                  	<li><a href="weeklyreports.html"><i class="fa fa-circle-o"></i> Weekly Report</a></li>
+
+                   <!-- <li><a href="#"><i class="fa fa-circle-o"></i> Monthly Reports</a></li>
+                    <li><a href="#"><i class="fa fa-circle-o"></i> Yearly Reports </a></li>-->
                 </ul>
-            </li> -->                   
+            </li>
         </ul>
     </section>
 </aside>
@@ -109,12 +114,22 @@
                 <div class="box">
                     <div class="box-header with-border">
                         <h3 class="box-title">Add Rating to Employee</h3>            
-                        <div class="box-tools2 pull-right">                        
+                        <!--<div class="box-tools2 pull-right">                        
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label for="inputEmail3" class="col-sm-5 control-label text-right">Date</label>                        
-                                <div class="col-sm-6">
-                                  <div id="Datehold"></div>
+                                <div class="col-sm-6" id="Datehold">
+                                 
+                                </div>
+                            </div>
+                        </div>
+                      </div>-->
+					  <div class="box-tools2 pull-right">                        
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="inputEmail3" class="col-sm-3 control-label text-right">Date</label>                        
+                                <div class="col-sm-9" id="Datehold">
+                                
                                 </div>
                             </div>
                         </div>
@@ -148,19 +163,19 @@
                                             <label class="half" for="star3half1" title="Meh - 3.5 stars"></label>-->
                                             
                                             <input type="radio" id="star31" name="rating1" value="3" onchange="callLabel()"/>
-                                            <label class = "full" for="star31" title="Meh - 3 stars"></label>
+                                            <label class = "full" for="star31" title="Efforts made - 3 stars"></label>
                                             
                                             <!--<input type="radio" id="star2half1" name="rating1" value="2.5" />
                                             <label class="half" for="star2half1" title="Kinda bad - 2.5 stars"></label>-->
                                             
                                             <input type="radio" id="star21" name="rating1" value="2" onchange="callLabel()"/>
-                                            <label class = "full" for="star21" title="Kinda bad - 2 stars"></label>
+                                            <label class = "full" for="star21" title="try and improve- 2 stars"></label>
                                             
                                             <!--<input type="radio" id="star1half" name="rating1" value="1.5" />
                                             <label class="half" for="star1half" title="Meh - 1.5 stars"></label>-->
                                             
                                             <input type="radio" id="star11" name="rating1" value="1" onchange="callLabel()"/>
-                                            <label class = "full" for="star11" title="Sucks big time - 1 star"></label>
+                                            <label class = "full" for="star11" title="Oh no-1 star"></label>
                                             
                                             <!--<input type="radio" id="starhalf1" name="rating1" value="0.5" />
                                             <label class="half" for="starhalf1" title="Sucks big time - 0.5 stars"></label>-->
@@ -186,19 +201,19 @@
                                             <label class="half" for="star3half2" title="Meh - 3.5 stars"></label>-->
                                             
                                             <input type="radio" id="star32" name="rating2" value="3" onchange="callLabel()"/>
-                                            <label class = "full" for="star32" title="Meh - 3 stars"></label>
+                                            <label class = "full" for="star32" title="Efforts made - 3 stars"></label>
                                             
                                             <!--<input type="radio" id="star2half2" name="rating2" value="2 and a half" />
                                             <label class="half" for="star2half2" title="Kinda bad - 2.5 stars"></label>-->
                                             
                                             <input type="radio" id="star22" name="rating2" value="2" onchange="callLabel()"/>
-                                            <label class = "full" for="star22" title="Kinda bad - 2 stars"></label>
+                                            <label class = "full" for="star22" title="try and improve- 2 stars"></label>
                                             
                                            <!-- <input type="radio" id="star1half2" name="rating" value="1 and a half" />
                                             <label class="half" for="star1half2" title="Meh - 1.5 stars"></label> -->
                                             
                                             <input type="radio" id="star12" name="rating2" value="1"  onchange="callLabel()"/>
-                                            <label class = "full" for="star12" title="Sucks big time - 1 star"></label>
+                                            <label class = "full" for="star12" title="Oh no-1 star"></label>
                                             
                                            <!-- <input type="radio" id="starhalf2" name="rating2" value="half" />
                                             <label class="half" for="starhalf2" title="Sucks big time - 0.5 stars"></label>-->
@@ -224,19 +239,19 @@
                                             <label class="half" for="star3half3" title="Meh - 3.5 stars"></label> -->
                                             
                                             <input type="radio" id="star33" name="rating3" value="3" onchange="callLabel()"/>
-                                            <label class = "full" for="star33" title="Meh - 3 stars"></label>
+                                            <label class = "full" for="star33" title="Efforts made - 3 stars"></label>
                                             
                                             <!--<input type="radio" id="star2half3" name="rating3" value="2 and a half" />
                                             <label class="half" for="star2half3" title="Kinda bad - 2.5 stars"></label>-->
                                             
                                             <input type="radio" id="star23" name="rating3" value="2" onchange="callLabel()"/>
-                                            <label class = "full" for="star23" title="Kinda bad - 2 stars"></label>
+                                            <label class = "full" for="star23" title="try and improve- 2 stars"></label>
                                             
                                             <!--<input type="radio" id="star1half3" name="rating3" value="1 and a half" />
                                             <label class="half" for="star1half3" title="Meh - 1.5 stars"></label>-->
                                             
                                             <input type="radio" id="star13" name="rating3" value="1" onchange="callLabel()"/>
-                                            <label class = "full" for="star13" title="Sucks big time - 1 star"></label>
+                                            <label class = "full" for="star13" title="Oh no-1 star"></label>
                                             
                                             <!--<input type="radio" id="starhalf3" name="rating3" value="half" />
                                             <label class="half" for="starhalf3" title="Sucks big time - 0.5 stars"></label>-->
@@ -262,19 +277,19 @@
                                             <label class="half" for="star3half4" title="Meh - 3.5 stars"></label>-->
                                             
                                             <input type="radio" id="star34" name="rating4" value="3" onchange="callLabel()" />
-                                            <label class = "full" for="star34" title="Meh - 3 stars"></label>
+                                            <label class = "full" for="star34" title="Efforts made - 3 stars"></label>
                                             
                                             <!--<input type="radio" id="star2half4" name="rating4" value="2 and a half" />
                                             <label class="half" for="star2half4" title="Kinda bad - 2.5 stars"></label>-->
                                             
                                             <input type="radio" id="star24" name="rating4" value="2" onchange="callLabel()" />
-                                            <label class = "full" for="star24" title="Kinda bad - 2 stars"></label>
+                                            <label class = "full" for="star24" title="try and improve- 2 stars"></label>
                                             
                                             <!--<input type="radio" id="star1half4" name="rating4" value="1 and a half" />
                                             <label class="half" for="star1half4" title="Meh - 1.5 stars"></label>-->
                                             
                                             <input type="radio" id="star14" name="rating4" value="1" onchange="callLabel()" />
-                                            <label class = "full" for="star14" title="Sucks big time - 1 star"></label>
+                                            <label class = "full" for="star14" title="Oh no-1 star"></label>
                                             
                                             <!--<input type="radio" id="starhalf4" name="rating4" value="half" />
                                             <label class="half" for="starhalf4" title="Sucks big time - 0.5 stars"></label>-->
@@ -300,19 +315,19 @@
                                             <label class="half" for="star3half5" title="Meh - 3.5 stars"></label>-->
                                             
                                             <input type="radio" id="star35" name="rating5" value="3"onchange="callLabel()"/>
-                                            <label class = "full" for="star35" title="Meh - 3 stars"></label>
+                                            <label class = "full" for="star35" title="Efforts made - 3 stars"></label>
                                             
                                             <!--<input type="radio" id="star2half5" name="rating5" value="2 and a half" />
                                             <label class="half" for="star2half5" title="Kinda bad - 2.5 stars"></label>-->
                                             
                                             <input type="radio" id="star25" name="rating5" value="2" onchange="callLabel()"/>
-                                            <label class = "full" for="star25" title="Kinda bad - 2 stars"></label>
+                                            <label class = "full" for="star25" title="try and improve- 2 stars"></label>
                                             
                                             <!--<input type="radio" id="star1half5" name="rating5" value="1 and a half" />
                                             <label class="half" for="star1half5" title="Meh - 1.5 stars"></label>-->
                                             
                                             <input type="radio" id="star15" name="rating" value="1"onchange="callLabel()"/>
-                                            <label class = "full" for="star15" title="Sucks big time - 1 star"></label>
+                                            <label class = "full" for="star15" title="Oh no-1 star"></label>
                                             
                                             <!--<input type="radio" id="starhalf5" name="rating5" value="half" />
                                             <label class="half" for="starhalf5" title="Sucks big time - 0.5 stars"></label>-->
@@ -373,9 +388,9 @@
                             <div class="clearfix"></div>
                             <div class="col-md-9 col-sm-offset-1">
                                 <div class="form-group">
-                                    <label for="inputEmail3" class="col-sm-2 control-label text-right">Message</label>
+                                    <label for="inputEmail3" class="col-sm-2 control-label text-right">Comments</label>
                                     <div class="col-sm-10">
-                                    	<textarea class="form-control" name="comment" id="Msgbox" rows="3" placeholder="Enter your Message..." value=""></textarea>
+                                    	<textarea class="form-control" name="comments" id="Msgbox" rows="3" placeholder="" value=""></textarea>
                                     </div>
                                 </div>
                             </div>

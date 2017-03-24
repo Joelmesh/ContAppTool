@@ -1,15 +1,28 @@
 						
 						var sel = document.createElement('select');
+						sel.setAttribute("class", "form-control");
 						var opt = document.createElement('option');
 						var opt1 = document.createElement('option');
 						var opt2 = document.createElement('option');
 						var opt3 = document.createElement('option');
 						window.onload = function()
 						{
-							Populate();
+						     firebase.auth().onAuthStateChanged(function(user) {
+                            if (user) {
+                              // User is signed in.
+                               Populate();
+                            } else {
+                              // No user is signed in.
+                               window.location.href="../index.html";
+
+                            }
+                          });
+
 						};
 						function Populate()
 						{
+
+
 						document.getElementById("overall_disp").style.visibility = "hidden";
 						var currentdate=new Date();
 						console.log("currentDate value:"+currentdate);
@@ -25,302 +38,722 @@
 						var one_day=1000*60*60*24;;
 						var difference_ms;
 						var Diffval;
+						var day_cr=0;
     				switch(toggle)
 					{
 					case 1:
-					First_FriDate.setDate(currentdate.getDate()-3);//first friday
-					Second_FriDate.setDate(First_FriDate.getDate()-7); //2nd friday
-					Third_FriDate.setDate(Second_FriDate.getDate()-7); //3rd friday
-					Fourth_FriDate.setDate(Third_FriDate.getDate()-7); //4th friday
-					// Compare between 2nd and 3rd fridays
-					 seal1 = First_FriDate.getTime();
-    				 seal2 = Second_FriDate.getTime();
-					 difference_ms = seal1 - seal2;
-					 Diffval=Math.round(difference_ms/one_day);
-					 if(Diffval!=7 && Diffval!=-7 )
-					 {
-					  Second_FriDate.setDate(First_FriDate.getDate()-38);
-					 }
-					 console.log("2nd Fri:"+Second_FriDate);
-					 seal1 = Second_FriDate.getTime();
-    				 seal2 = Third_FriDate.getTime();
-					 difference_ms = seal1 - seal2;
-					 console.log("2nd and 3rd firday difference:"+difference_ms);
-					 Diffval=Math.round(difference_ms/one_day);
-					 console.log("2nd and 3rd difference:"+Diffval);
-					 if(Diffval!=7 && Diffval!=-7 )
-					 {
-					  Third_FriDate.setDate(Second_FriDate.getDate()-38);
-					 }
-					// Compare between 4th and 3rd fridays
-					  seal1 = Third_FriDate.getTime();
-    				  seal2 = Fourth_FriDate.getTime();
-					  one_day=1000*60*60*24;
-					  difference_ms = seal2 - seal1;
-    				  Diffval=Math.round(difference_ms/one_day);
-					  if(Diffval!=7 && Diffval!=-7)
-					 {
-					  Fourth_FriDate.setDate(Third_FriDate.getDate()-38);
-					 }
-					 
-					 coverttoshort(First_FriDate,Second_FriDate,Third_FriDate,Fourth_FriDate);
-	   				break;
+                                      First_FriDate.setDate(currentdate.getDate()-3);//first friday
+                                      Second_FriDate.setDate(First_FriDate.getDate()-7); //2nd friday
+                                      Third_FriDate.setDate(Second_FriDate.getDate()-7); //3rd friday
+                                      Fourth_FriDate.setDate(Third_FriDate.getDate()-7); //4th friday
 
-					case 2:
-				
-				
-					First_FriDate.setDate(currentdate.getDate()-4);
-					Second_FriDate.setDate(First_FriDate.getDate()-7); //2nd friday
-					Third_FriDate.setDate(Second_FriDate.getDate()-7); //3rd friday
-					Fourth_FriDate.setDate(Third_FriDate.getDate()-7); //4th friday
-					// Compare between 2nd and 3rd fridays
-					 seal1 = First_FriDate.getTime();
-        			 seal2 = Second_FriDate.getTime();
-					 difference_ms = seal1 - seal2;
-					 Diffval=Math.round(difference_ms/one_day);
-					 if(Diffval!=7 && Diffval!=-7 )
-					 {
-					
-					  Second_FriDate.setDate(First_FriDate.getDate()-38);
-					
-					 }
-					 seal1 = Second_FriDate.getTime();
-        			 seal2 = Third_FriDate.getTime();
-					 difference_ms = seal1 - seal2;
-					 Diffval=Math.round(difference_ms/one_day);
-					 if(Diffval!=7 && Diffval!=-7 )
-					 {
-					
-					  Third_FriDate.setDate(Second_FriDate.getDate()-38);
-					
-					 }
-					// Compare between 4th and 3rd fridays
-					  seal1 = Third_FriDate.getTime();
-        			  seal2 = Fourth_FriDate.getTime();
-					  one_day=1000*60*60*24;
-					  difference_ms = seal2 - seal1;
-        			  Diffval=Math.round(difference_ms/one_day);
-					  if(Diffval!=7 && Diffval!=-7)
-					 {
-					  Fourth_FriDate.setDate(Third_FriDate.getDate()-38);
-					 }
-					 coverttoshort(First_FriDate,Second_FriDate,Third_FriDate,Fourth_FriDate);
-									
-					break;
-				
-					case 3:
-				
-					First_FriDate.setDate(currentdate.getDate()-5);
-					Second_FriDate.setDate(First_FriDate.getDate()-7); //2nd friday
-					Third_FriDate.setDate(Second_FriDate.getDate()-7); //3rd friday
-					Fourth_FriDate.setDate(Third_FriDate.getDate()-7); //4th friday
-					// Compare between 2nd and 3rd fridays
-					 seal1 = First_FriDate.getTime();
-        			 seal2 = Second_FriDate.getTime();
-					 difference_ms = seal1 - seal2;
-					 Diffval=Math.round(difference_ms/one_day);
-					 if(Diffval!=7 && Diffval!=-7 )
-					 {
-					
-					  Second_FriDate.setDate(First_FriDate.getDate()-38);
-					
-					 }
-				
-					 seal1 = Second_FriDate.getTime();
-        			 seal2 = Third_FriDate.getTime();
-					 difference_ms = seal1 - seal2;
-					 Diffval=Math.round(difference_ms/one_day);
-					 if(Diffval!=7 && Diffval!=-7 )
-					 {
-					
-					  Third_FriDate.setDate(Second_FriDate.getDate()-38);
-					
-					 }
-					// Compare between 4th and 3rd fridays
-					  seal1 = Third_FriDate.getTime();
-        			  seal2 = Fourth_FriDate.getTime();
-					  one_day=1000*60*60*24;
-					  difference_ms = seal2 - seal1;
-        			  Diffval=Math.round(difference_ms/one_day);
-					  if(Diffval!=7 && Diffval!=-7)
-					 {
-					  Fourth_FriDate.setDate(Third_FriDate.getDate()-38);
-					 }
-					 coverttoshort(First_FriDate,Second_FriDate,Third_FriDate,Fourth_FriDate);
-									
-					break;
-				
-					case 4:
-					First_FriDate.setDate(currentdate.getDate()-6);
-					Second_FriDate.setDate(First_FriDate.getDate()-7); //2nd friday
-					Third_FriDate.setDate(Second_FriDate.getDate()-7); //3rd friday
-					Fourth_FriDate.setDate(Third_FriDate.getDate()-7); //4th friday
-					// Compare between 2nd and 3rd fridays
-					 seal1 = First_FriDate.getTime();
-					 seal2 = Second_FriDate.getTime();
-					 difference_ms = seal1 - seal2;
-					 console.log("1st and 2nd firday difference:"+difference_ms);
-					 Diffval=Math.round(difference_ms/one_day);
-					 if(Diffval!=7 && Diffval!=-7 )
-					 {
-					
-					  Second_FriDate.setDate(First_FriDate.getDate()-38);
-					
-					 }
-					 seal1 = Second_FriDate.getTime();
-					 seal2 = Third_FriDate.getTime();
-					 difference_ms = seal1 - seal2;
-					 Diffval=Math.round(difference_ms/one_day);
-					 if(Diffval!=7 && Diffval!=-7 )
-					 {
-					
-					  Third_FriDate.setDate(Second_FriDate.getDate()-38);
-					
-					 }
-					// Compare between 4th and 3rd fridays
-					  seal1 = Third_FriDate.getTime();
-					  seal2 = Fourth_FriDate.getTime();
-					  one_day=1000*60*60*24;
-					  difference_ms = seal2 - seal1;
-					  Diffval=Math.round(difference_ms/one_day);
-					  if(Diffval!=7 && Diffval!=-7)
-					 {
-					  Fourth_FriDate.setDate(Third_FriDate.getDate()-38);
-					 }
-					 coverttoshort(First_FriDate,Second_FriDate,Third_FriDate,Fourth_FriDate);
-				
-									
-					break;
-				
-					case 5:
-				
-					First_FriDate.setDate(currentdate.getDate()-7);
-					Second_FriDate.setDate(First_FriDate.getDate()-7); //2nd friday
-					Third_FriDate.setDate(Second_FriDate.getDate()-7); //3rd friday
-					Fourth_FriDate.setDate(Third_FriDate.getDate()-7); //4th friday
-                    seal1 = First_FriDate.getTime();
-                    seal2 = Second_FriDate.getTime();
-					difference_ms = seal1 - seal2;
-					 Diffval=Math.round(difference_ms/one_day);
-					 if(Diffval!=7 && Diffval!=-7 )
-					 {
-					
-					  Second_FriDate.setDate(First_FriDate.getDate()-38);
-					
-					 }
-				
-					 seal1 = Second_FriDate.getTime();
-                     seal2 = Third_FriDate.getTime();
-					 difference_ms = seal1 - seal2;
-					 Diffval=Math.round(difference_ms/one_day);
-					 if(Diffval!=7 && Diffval!=-7 )
-					 {
-					  Third_FriDate.setDate(Second_FriDate.getDate()-38);
-					 }
-					// Compare between 4th and 3rd fridays
-					  seal1 = Third_FriDate.getTime();
-                      seal2 = Fourth_FriDate.getTime();
-					  one_day=1000*60*60*24;
-					  difference_ms = seal2 - seal1;
-                      Diffval=Math.round(difference_ms/one_day);
-					  if(Diffval!=7 && Diffval!=-7)
-					 {
-					  Fourth_FriDate.setDate(Third_FriDate.getDate()-38);
-					 }
-					 
-					 coverttoshort(First_FriDate,Second_FriDate,Third_FriDate,Fourth_FriDate);
-				
-			
-					break;
-									
-				
-					case 6:
-			
-					First_FriDate.setDate(currentdate.getDate()-8);
-				    Second_FriDate.setDate(First_FriDate.getDate()-7); //2nd friday
-					Third_FriDate.setDate(Second_FriDate.getDate()-7); //3rd friday
-					Fourth_FriDate.setDate(Third_FriDate.getDate()-7); //4th friday
-					// Compare between 2nd and 3rd fridays
-					 seal1 = First_FriDate.getTime();
-                     seal2 = Second_FriDate.getTime();
-					 difference_ms = seal1 - seal2;
-					 Diffval=Math.round(difference_ms/one_day);
-					 if(Diffval!=7 && Diffval!=-7 )
-					 {
-					  Second_FriDate.setDate(First_FriDate.getDate()-38);
-					 }
-				     seal1 = Second_FriDate.getTime();
-                     seal2 = Third_FriDate.getTime();
-					 difference_ms = seal1 - seal2;
-					 Diffval=Math.round(difference_ms/one_day);
-					 if(Diffval!=7 && Diffval!=-7 )
-					 {
-					
-					  Third_FriDate.setDate(Second_FriDate.getDate()-38);
-					
-					 }
-					// Compare between 4th and 3rd fridays
-					  seal1 = Third_FriDate.getTime();
-                      seal2 = Fourth_FriDate.getTime();
-					  one_day=1000*60*60*24;
-					  difference_ms = seal2 - seal1;
-                      Diffval=Math.round(difference_ms/one_day);
-					  if(Diffval!=7 && Diffval!=-7)
-					 {
-					
-					  Fourth_FriDate.setDate(Third_FriDate.getDate()-38);
-					 }
+                                       // Compare between 2nd and 3rd fridays
+                                       seal1 = First_FriDate.getTime();
+                                       seal2 = Second_FriDate.getTime();
+                                       difference_ms = seal1 - seal2;
+                                       Diffval=Math.round(difference_ms/one_day);
 
-					 coverttoshort(First_FriDate,Second_FriDate,Third_FriDate,Fourth_FriDate);
-									
-					break;
-				
-					case 0:
-				
-					First_FriDate.setDate(currentdate.getDate()-9);
-				    Second_FriDate.setDate(First_FriDate.getDate()-7); //2nd friday
-					Third_FriDate.setDate(Second_FriDate.getDate()-7); //3rd friday
-					Fourth_FriDate.setDate(Third_FriDate.getDate()-7); //4th friday
-					// Compare between 2nd and 3rd fridays
-					 seal1 = First_FriDate.getTime();
-                     seal2 = Second_FriDate.getTime();
-					 difference_ms = seal1 - seal2;
-					 Diffval=Math.round(difference_ms/one_day);
-					 if(Diffval!=7 && Diffval!=-7 )
-					 {
-					
-					  Second_FriDate.setDate(First_FriDate.getDate()-38);
-					
-					 }
-				     seal1 = Second_FriDate.getTime();
-                     seal2 = Third_FriDate.getTime();
-					 difference_ms = seal1 - seal2;
-					 Diffval=Math.round(difference_ms/one_day);
-					 if(Diffval!=7 && Diffval!=-7 )
-					 {
-					  Third_FriDate.setDate(Second_FriDate.getDate()-38);
-					 }
+                                       if(Diffval!=7 && Diffval!=-7 )
+                                       {
+                                        Second_FriDate.setDate(First_FriDate.getDate()-35);
+                                        day_cr=Second_FriDate.getDay();
+                                        if(day_cr!=5)
+                                        {
+                                        Second_FriDate=new Date();
+                                        Second_FriDate.setDate(First_FriDate.getDate()-38);
+                                        }
+                                         day_cr=Second_FriDate.getDay();
+                                        if(day_cr!=5)
+                                        {
+                                         Second_FriDate=new Date();
+                                         Second_FriDate.setDate(First_FriDate.getDate()-37);
+                                        }
+                                         day_cr=Second_FriDate.getDay();
+                                        if(day_cr!=5)
+                                        {
+                                           Second_FriDate=new Date();
+                                           Second_FriDate.setDate(First_FriDate.getDate()-36);
+                                        }
+                                       }
 
-					// Compare between 4th and 3rd fridays
-					  seal1 = Third_FriDate.getTime();
-                      seal2 = Fourth_FriDate.getTime();
-					  one_day=1000*60*60*24;
-					  difference_ms = seal2 - seal1;
-                      Diffval=Math.round(difference_ms/one_day);
-					  console.log("difference betwee 4th and 3rd fridays:"+Diffval);
-					  if(Diffval!=7 && Diffval!=-7)
-					 {
-					  Fourth_FriDate.setDate(Third_FriDate.getDate()-38);
-					 }
-					 
-					 coverttoshort(First_FriDate,Second_FriDate,Third_FriDate,Fourth_FriDate);
+                                       console.log("2nd Fri:"+Second_FriDate);
 
-					break;
+                                       seal1 = Second_FriDate.getTime();
+                                       seal2 = Third_FriDate.getTime();
+                                       difference_ms = seal1 - seal2;
+                                       console.log("2nd and 3rd firday difference:"+difference_ms);
+                                       Diffval=Math.round(difference_ms/one_day);
+                                       console.log("2nd and 3rd difference:"+Diffval);
+
+                                       if(Diffval!=7 && Diffval!=-7 )
+                                       {
+                                        Third_FriDate.setDate(Second_FriDate.getDate()-35);
+                                        day_cr=Third_FriDate.getDay();
+                                        if(day_cr!=5)
+                                        {
+                                        Third_FriDate=new Date();
+                                        Third_FriDate.setDate(Second_FriDate.getDate()-38);
+                                        }
+                                        day_cr=Third_FriDate.getDay();
+                                        if(day_cr!=5)
+                                        {
+                                        Third_FriDate=new Date();
+                                        Third_FriDate.setDate(Second_FriDate.getDate()-37);
+                                        }
+                                        day_cr=Third_FriDate.getDay();
+                                        if(day_cr!=5)
+                                        {
+                                        Third_FriDate=new Date();
+                                        Third_FriDate.setDate(Second_FriDate.getDate()-36);
+                                        }
+                                       }
+
+                                      // Compare between 4th and 3rd fridays
+                                        seal1 = Third_FriDate.getTime();
+                                        seal2 = Fourth_FriDate.getTime();
+                                        one_day=1000*60*60*24;
+                                        difference_ms = seal2 - seal1;
+                                        Diffval=Math.round(difference_ms/one_day);
+
+                                        if(Diffval!=7 && Diffval!=-7)
+                                         {
+                                          Fourth_FriDate.setDate(Third_FriDate.getDate()-35);
+                                          day_cr=Fourth_FriDate.getDay();
+                                          if(day_cr!=5)
+                                          {
+                                          Fourth_FriDate=new Date();
+                                          Fourth_FriDate.setDate(Third_FriDate.getDate()-38);
+                                          }
+                                           day_cr=Fourth_FriDate.getDay();
+                                           if(day_cr!=5)
+                                           {
+                                           Fourth_FriDate=new Date();
+                                           Fourth_FriDate.setDate(Third_FriDate.getDate()-37);
+                                           }
+                                           day_cr=Fourth_FriDate.getDay();
+                                           if(day_cr!=5)
+                                           {
+                                            Fourth_FriDate=new Date();
+                                            Fourth_FriDate.setDate(Third_FriDate.getDate()-36);
+                                           }
+                                         }
+                                        coverttoshort(First_FriDate,Second_FriDate,Third_FriDate,Fourth_FriDate);
+
+                                         break;
+
+                    case 2:
+                                      First_FriDate.setDate(currentdate.getDate()-4);//first friday
+                                      Second_FriDate.setDate(First_FriDate.getDate()-7); //2nd friday
+                                      Third_FriDate.setDate(Second_FriDate.getDate()-7); //3rd friday
+                                      Fourth_FriDate.setDate(Third_FriDate.getDate()-7); //4th friday
+
+                                       // Compare between 2nd and 3rd fridays
+                                       seal1 = First_FriDate.getTime();
+                                       seal2 = Second_FriDate.getTime();
+                                       difference_ms = seal1 - seal2;
+                                       Diffval=Math.round(difference_ms/one_day);
+
+                                       if(Diffval!=7 && Diffval!=-7 )
+                                       {
+                                        Second_FriDate.setDate(First_FriDate.getDate()-35);
+                                        day_cr=Second_FriDate.getDay();
+                                        if(day_cr!=5)
+                                        {
+                                        Second_FriDate=new Date();
+                                        Second_FriDate.setDate(First_FriDate.getDate()-38);
+                                        }
+                                         day_cr=Second_FriDate.getDay();
+                                        if(day_cr!=5)
+                                        {
+                                         Second_FriDate=new Date();
+                                         Second_FriDate.setDate(First_FriDate.getDate()-37);
+                                        }
+                                         day_cr=Second_FriDate.getDay();
+                                        if(day_cr!=5)
+                                        {
+                                           Second_FriDate=new Date();
+                                           Second_FriDate.setDate(First_FriDate.getDate()-36);
+                                        }
+                                       }
+
+                                       console.log("2nd Fri:"+Second_FriDate);
+
+                                       seal1 = Second_FriDate.getTime();
+                                       seal2 = Third_FriDate.getTime();
+                                       difference_ms = seal1 - seal2;
+                                       console.log("2nd and 3rd firday difference:"+difference_ms);
+                                       Diffval=Math.round(difference_ms/one_day);
+                                       console.log("2nd and 3rd difference:"+Diffval);
+
+                                       if(Diffval!=7 && Diffval!=-7 )
+                                       {
+                                        Third_FriDate.setDate(Second_FriDate.getDate()-35);
+                                        day_cr=Third_FriDate.getDay();
+                                        if(day_cr!=5)
+                                        {
+                                        Third_FriDate=new Date();
+                                        Third_FriDate.setDate(Second_FriDate.getDate()-38);
+                                        }
+                                        day_cr=Third_FriDate.getDay();
+                                        if(day_cr!=5)
+                                        {
+                                        Third_FriDate=new Date();
+                                        Third_FriDate.setDate(Second_FriDate.getDate()-37);
+                                        }
+                                        day_cr=Third_FriDate.getDay();
+                                        if(day_cr!=5)
+                                        {
+                                        Third_FriDate=new Date();
+                                        Third_FriDate.setDate(Second_FriDate.getDate()-36);
+                                        }
+                                       }
+
+                                      // Compare between 4th and 3rd fridays
+                                        seal1 = Third_FriDate.getTime();
+                                        seal2 = Fourth_FriDate.getTime();
+                                        one_day=1000*60*60*24;
+                                        difference_ms = seal2 - seal1;
+                                        Diffval=Math.round(difference_ms/one_day);
+
+                                        if(Diffval!=7 && Diffval!=-7)
+                                         {
+                                          Fourth_FriDate.setDate(Third_FriDate.getDate()-35);
+                                          day_cr=Fourth_FriDate.getDay();
+                                          if(day_cr!=5)
+                                          {
+                                          Fourth_FriDate=new Date();
+                                          Fourth_FriDate.setDate(Third_FriDate.getDate()-38);
+                                          }
+                                           day_cr=Fourth_FriDate.getDay();
+                                           if(day_cr!=5)
+                                           {
+                                           Fourth_FriDate=new Date();
+                                           Fourth_FriDate.setDate(Third_FriDate.getDate()-37);
+                                           }
+                                           day_cr=Fourth_FriDate.getDay();
+                                           if(day_cr!=5)
+                                           {
+                                            Fourth_FriDate=new Date();
+                                            Fourth_FriDate.setDate(Third_FriDate.getDate()-36);
+                                           }
+                                         }
+                                        coverttoshort(First_FriDate,Second_FriDate,Third_FriDate,Fourth_FriDate);
+
+                                        break;
+
+                    case 3:
+                                     First_FriDate.setDate(currentdate.getDate()-5);
+                                     Second_FriDate.setDate(First_FriDate.getDate()-7); //2nd friday
+                                     Third_FriDate.setDate(Second_FriDate.getDate()-7); //3rd friday
+                                     Fourth_FriDate.setDate(Third_FriDate.getDate()-7); //4th friday
+
+                                      // Compare between 2nd and 3rd fridays
+                                      seal1 = First_FriDate.getTime();
+                                      seal2 = Second_FriDate.getTime();
+                                      difference_ms = seal1 - seal2;
+                                      Diffval=Math.round(difference_ms/one_day);
+
+                                      if(Diffval!=7 && Diffval!=-7 )
+                                      {
+                                       Second_FriDate.setDate(First_FriDate.getDate()-35);
+                                       day_cr=Second_FriDate.getDay();
+                                       if(day_cr!=5)
+                                       {
+                                       Second_FriDate=new Date();
+                                       Second_FriDate.setDate(First_FriDate.getDate()-38);
+                                       }
+                                        day_cr=Second_FriDate.getDay();
+                                       if(day_cr!=5)
+                                       {
+                                        Second_FriDate=new Date();
+                                        Second_FriDate.setDate(First_FriDate.getDate()-37);
+                                       }
+                                        day_cr=Second_FriDate.getDay();
+                                       if(day_cr!=5)
+                                       {
+                                          Second_FriDate=new Date();
+                                          Second_FriDate.setDate(First_FriDate.getDate()-36);
+                                       }
+                                      }
+
+                                      console.log("2nd Fri:"+Second_FriDate);
+
+                                      seal1 = Second_FriDate.getTime();
+                                      seal2 = Third_FriDate.getTime();
+                                      difference_ms = seal1 - seal2;
+                                      console.log("2nd and 3rd firday difference:"+difference_ms);
+                                      Diffval=Math.round(difference_ms/one_day);
+                                      console.log("2nd and 3rd difference:"+Diffval);
+
+                                      if(Diffval!=7 && Diffval!=-7 )
+                                      {
+                                       Third_FriDate.setDate(Second_FriDate.getDate()-35);
+                                       day_cr=Third_FriDate.getDay();
+                                       if(day_cr!=5)
+                                       {
+                                       Third_FriDate=new Date();
+                                       Third_FriDate.setDate(Second_FriDate.getDate()-38);
+                                       }
+                                       day_cr=Third_FriDate.getDay();
+                                       if(day_cr!=5)
+                                       {
+                                       Third_FriDate=new Date();
+                                       Third_FriDate.setDate(Second_FriDate.getDate()-37);
+                                       }
+                                       day_cr=Third_FriDate.getDay();
+                                       if(day_cr!=5)
+                                       {
+                                       Third_FriDate=new Date();
+                                       Third_FriDate.setDate(Second_FriDate.getDate()-36);
+                                       }
+                                      }
+
+                                     // Compare between 4th and 3rd fridays
+                                       seal1 = Third_FriDate.getTime();
+                                       seal2 = Fourth_FriDate.getTime();
+                                       one_day=1000*60*60*24;
+                                       difference_ms = seal2 - seal1;
+                                       Diffval=Math.round(difference_ms/one_day);
+
+                                       if(Diffval!=7 && Diffval!=-7)
+                                        {
+                                         Fourth_FriDate.setDate(Third_FriDate.getDate()-35);
+                                         day_cr=Fourth_FriDate.getDay();
+                                         if(day_cr!=5)
+                                         {
+                                         Fourth_FriDate=new Date();
+                                         Fourth_FriDate.setDate(Third_FriDate.getDate()-38);
+                                         }
+                                          day_cr=Fourth_FriDate.getDay();
+                                          if(day_cr!=5)
+                                          {
+                                          Fourth_FriDate=new Date();
+                                          Fourth_FriDate.setDate(Third_FriDate.getDate()-37);
+                                          }
+                                          day_cr=Fourth_FriDate.getDay();
+                                          if(day_cr!=5)
+                                          {
+                                           Fourth_FriDate=new Date();
+                                           Fourth_FriDate.setDate(Third_FriDate.getDate()-36);
+                                          }
+                                        }
+
+                                       coverttoshort(First_FriDate,Second_FriDate,Third_FriDate,Fourth_FriDate);
+
+                                     break;
+
+                    case 4:
+                                 First_FriDate.setDate(currentdate.getDate()-6);
+                                 Second_FriDate.setDate(First_FriDate.getDate()-7); //2nd friday
+                                 Third_FriDate.setDate(Second_FriDate.getDate()-7); //3rd friday
+                                 Fourth_FriDate.setDate(Third_FriDate.getDate()-7); //4th friday
+
+                                  // Compare between 2nd and 3rd fridays
+                                  seal1 = First_FriDate.getTime();
+                                  seal2 = Second_FriDate.getTime();
+                                  difference_ms = seal1 - seal2;
+                                  Diffval=Math.round(difference_ms/one_day);
+
+                                  if(Diffval!=7 && Diffval!=-7 )
+                                  {
+                                   Second_FriDate.setDate(First_FriDate.getDate()-35);
+                                   day_cr=Second_FriDate.getDay();
+                                   if(day_cr!=5)
+                                   {
+                                   Second_FriDate=new Date();
+                                   Second_FriDate.setDate(First_FriDate.getDate()-38);
+                                   }
+                                    day_cr=Second_FriDate.getDay();
+                                   if(day_cr!=5)
+                                   {
+                                    Second_FriDate=new Date();
+                                    Second_FriDate.setDate(First_FriDate.getDate()-37);
+                                   }
+                                    day_cr=Second_FriDate.getDay();
+                                   if(day_cr!=5)
+                                   {
+                                      Second_FriDate=new Date();
+                                      Second_FriDate.setDate(First_FriDate.getDate()-36);
+                                   }
+                                  }
+
+                                  console.log("2nd Fri:"+Second_FriDate);
+
+                                  seal1 = Second_FriDate.getTime();
+                                  seal2 = Third_FriDate.getTime();
+                                  difference_ms = seal1 - seal2;
+                                  console.log("2nd and 3rd firday difference:"+difference_ms);
+                                  Diffval=Math.round(difference_ms/one_day);
+                                  console.log("2nd and 3rd difference:"+Diffval);
+
+                                  if(Diffval!=7 && Diffval!=-7 )
+                                  {
+                                   Third_FriDate.setDate(Second_FriDate.getDate()-35);
+                                   day_cr=Third_FriDate.getDay();
+                                   if(day_cr!=5)
+                                   {
+                                   Third_FriDate=new Date();
+                                   Third_FriDate.setDate(Second_FriDate.getDate()-38);
+                                   }
+                                   day_cr=Third_FriDate.getDay();
+                                   if(day_cr!=5)
+                                   {
+                                   Third_FriDate=new Date();
+                                   Third_FriDate.setDate(Second_FriDate.getDate()-37);
+                                   }
+                                   day_cr=Third_FriDate.getDay();
+                                   if(day_cr!=5)
+                                   {
+                                   Third_FriDate=new Date();
+                                   Third_FriDate.setDate(Second_FriDate.getDate()-36);
+                                   }
+                                  }
+
+                                 // Compare between 4th and 3rd fridays
+                                   seal1 = Third_FriDate.getTime();
+                                   seal2 = Fourth_FriDate.getTime();
+                                   one_day=1000*60*60*24;
+                                   difference_ms = seal2 - seal1;
+                                   Diffval=Math.round(difference_ms/one_day);
+
+                                   if(Diffval!=7 && Diffval!=-7)
+                                    {
+                                     Fourth_FriDate.setDate(Third_FriDate.getDate()-35);
+                                     day_cr=Fourth_FriDate.getDay();
+                                     if(day_cr!=5)
+                                     {
+                                     Fourth_FriDate=new Date();
+                                     Fourth_FriDate.setDate(Third_FriDate.getDate()-38);
+                                     }
+                                      day_cr=Fourth_FriDate.getDay();
+                                      if(day_cr!=5)
+                                      {
+                                      Fourth_FriDate=new Date();
+                                      Fourth_FriDate.setDate(Third_FriDate.getDate()-37);
+                                      }
+                                      day_cr=Fourth_FriDate.getDay();
+                                      if(day_cr!=5)
+                                      {
+                                       Fourth_FriDate=new Date();
+                                       Fourth_FriDate.setDate(Third_FriDate.getDate()-36);
+                                      }
+                                    }
+
+                                   coverttoshort(First_FriDate,Second_FriDate,Third_FriDate,Fourth_FriDate);
+
+                                    break;
+
+                         case 5:
+                                  First_FriDate.setDate(currentdate.getDate()-7);
+                                  Second_FriDate.setDate(First_FriDate.getDate()-7); //2nd friday
+                                  Third_FriDate.setDate(Second_FriDate.getDate()-7); //3rd friday
+                                  Fourth_FriDate.setDate(Third_FriDate.getDate()-7); //4th friday
+
+                                   // Compare between 2nd and 3rd fridays
+                                   seal1 = First_FriDate.getTime();
+                                   seal2 = Second_FriDate.getTime();
+                                   difference_ms = seal1 - seal2;
+                                   Diffval=Math.round(difference_ms/one_day);
+
+                                   if(Diffval!=7 && Diffval!=-7 )
+                                   {
+                                    Second_FriDate.setDate(First_FriDate.getDate()-35);
+                                    day_cr=Second_FriDate.getDay();
+                                    if(day_cr!=5)
+                                    {
+                                    Second_FriDate=new Date();
+                                    Second_FriDate.setDate(First_FriDate.getDate()-38);
+                                    }
+                                     day_cr=Second_FriDate.getDay();
+                                    if(day_cr!=5)
+                                    {
+                                     Second_FriDate=new Date();
+                                     Second_FriDate.setDate(First_FriDate.getDate()-37);
+                                    }
+                                     day_cr=Second_FriDate.getDay();
+                                    if(day_cr!=5)
+                                    {
+                                       Second_FriDate=new Date();
+                                       Second_FriDate.setDate(First_FriDate.getDate()-36);
+                                    }
+                                   }
+
+                                   console.log("2nd Fri:"+Second_FriDate);
+
+                                   seal1 = Second_FriDate.getTime();
+                                   seal2 = Third_FriDate.getTime();
+                                   difference_ms = seal1 - seal2;
+                                   console.log("2nd and 3rd firday difference:"+difference_ms);
+                                   Diffval=Math.round(difference_ms/one_day);
+                                   console.log("2nd and 3rd difference:"+Diffval);
+
+                                   if(Diffval!=7 && Diffval!=-7 )
+                                   {
+                                    Third_FriDate.setDate(Second_FriDate.getDate()-35);
+                                    day_cr=Third_FriDate.getDay();
+                                    if(day_cr!=5)
+                                    {
+                                    Third_FriDate=new Date();
+                                    Third_FriDate.setDate(Second_FriDate.getDate()-38);
+                                    }
+                                    day_cr=Third_FriDate.getDay();
+                                    if(day_cr!=5)
+                                    {
+                                    Third_FriDate=new Date();
+                                    Third_FriDate.setDate(Second_FriDate.getDate()-37);
+                                    }
+                                    day_cr=Third_FriDate.getDay();
+                                    if(day_cr!=5)
+                                    {
+                                    Third_FriDate=new Date();
+                                    Third_FriDate.setDate(Second_FriDate.getDate()-36);
+                                    }
+                                   }
+
+                                  // Compare between 4th and 3rd fridays
+                                    seal1 = Third_FriDate.getTime();
+                                    seal2 = Fourth_FriDate.getTime();
+                                    one_day=1000*60*60*24;
+                                    difference_ms = seal2 - seal1;
+                                    Diffval=Math.round(difference_ms/one_day);
+
+                                    if(Diffval!=7 && Diffval!=-7)
+                                     {
+                                      Fourth_FriDate.setDate(Third_FriDate.getDate()-35);
+                                      day_cr=Fourth_FriDate.getDay();
+                                      if(day_cr!=5)
+                                      {
+                                      Fourth_FriDate=new Date();
+                                      Fourth_FriDate.setDate(Third_FriDate.getDate()-38);
+                                      }
+                                       day_cr=Fourth_FriDate.getDay();
+                                       if(day_cr!=5)
+                                       {
+                                       Fourth_FriDate=new Date();
+                                       Fourth_FriDate.setDate(Third_FriDate.getDate()-37);
+                                       }
+                                       day_cr=Fourth_FriDate.getDay();
+                                       if(day_cr!=5)
+                                       {
+                                        Fourth_FriDate=new Date();
+                                        Fourth_FriDate.setDate(Third_FriDate.getDate()-36);
+                                       }
+                                     }
+
+                                     coverttoshort(First_FriDate,Second_FriDate,Third_FriDate,Fourth_FriDate);
+
+                                     break;
+
+                     case 6:
+                               First_FriDate.setDate(currentdate.getDate()-8);
+                               Second_FriDate.setDate(First_FriDate.getDate()-7); //2nd friday
+                               Third_FriDate.setDate(Second_FriDate.getDate()-7); //3rd friday
+                               Fourth_FriDate.setDate(Third_FriDate.getDate()-7); //4th friday
+
+                                // Compare between 2nd and 3rd fridays
+                                seal1 = First_FriDate.getTime();
+                                seal2 = Second_FriDate.getTime();
+                                difference_ms = seal1 - seal2;
+                                Diffval=Math.round(difference_ms/one_day);
+
+                                if(Diffval!=7 && Diffval!=-7 )
+                                {
+                                 Second_FriDate.setDate(First_FriDate.getDate()-35);
+                                 day_cr=Second_FriDate.getDay();
+                                 if(day_cr!=5)
+                                 {
+                                 Second_FriDate=new Date();
+                                 Second_FriDate.setDate(First_FriDate.getDate()-38);
+                                 }
+                                  day_cr=Second_FriDate.getDay();
+                                 if(day_cr!=5)
+                                 {
+                                  Second_FriDate=new Date();
+                                  Second_FriDate.setDate(First_FriDate.getDate()-37);
+                                 }
+                                  day_cr=Second_FriDate.getDay();
+                                 if(day_cr!=5)
+                                 {
+                                    Second_FriDate=new Date();
+                                    Second_FriDate.setDate(First_FriDate.getDate()-36);
+                                 }
+                                }
+
+                                console.log("2nd Fri:"+Second_FriDate);
+
+                                seal1 = Second_FriDate.getTime();
+                                seal2 = Third_FriDate.getTime();
+                                difference_ms = seal1 - seal2;
+                                console.log("2nd and 3rd firday difference:"+difference_ms);
+                                Diffval=Math.round(difference_ms/one_day);
+                                console.log("2nd and 3rd difference:"+Diffval);
+
+                                if(Diffval!=7 && Diffval!=-7 )
+                                {
+                                 Third_FriDate.setDate(Second_FriDate.getDate()-35);
+                                 day_cr=Third_FriDate.getDay();
+                                 if(day_cr!=5)
+                                 {
+                                 Third_FriDate=new Date();
+                                 Third_FriDate.setDate(Second_FriDate.getDate()-38);
+                                 }
+                                 day_cr=Third_FriDate.getDay();
+                                 if(day_cr!=5)
+                                 {
+                                 Third_FriDate=new Date();
+                                 Third_FriDate.setDate(Second_FriDate.getDate()-37);
+                                 }
+                                 day_cr=Third_FriDate.getDay();
+                                 if(day_cr!=5)
+                                 {
+                                 Third_FriDate=new Date();
+                                 Third_FriDate.setDate(Second_FriDate.getDate()-36);
+                                 }
+                                }
+
+                               // Compare between 4th and 3rd fridays
+                                 seal1 = Third_FriDate.getTime();
+                                 seal2 = Fourth_FriDate.getTime();
+                                 one_day=1000*60*60*24;
+                                 difference_ms = seal2 - seal1;
+                                 Diffval=Math.round(difference_ms/one_day);
+
+                                 if(Diffval!=7 && Diffval!=-7)
+                                  {
+                                   Fourth_FriDate.setDate(Third_FriDate.getDate()-35);
+                                   day_cr=Fourth_FriDate.getDay();
+                                   if(day_cr!=5)
+                                   {
+                                   Fourth_FriDate=new Date();
+                                   Fourth_FriDate.setDate(Third_FriDate.getDate()-38);
+                                   }
+                                    day_cr=Fourth_FriDate.getDay();
+                                    if(day_cr!=5)
+                                    {
+                                    Fourth_FriDate=new Date();
+                                    Fourth_FriDate.setDate(Third_FriDate.getDate()-37);
+                                    }
+                                    day_cr=Fourth_FriDate.getDay();
+                                    if(day_cr!=5)
+                                    {
+                                     Fourth_FriDate=new Date();
+                                     Fourth_FriDate.setDate(Third_FriDate.getDate()-36);
+                                    }
+                                  }
+
+                                 coverttoshort(First_FriDate,Second_FriDate,Third_FriDate,Fourth_FriDate);
+
+                                  break;
+
+                      case 0:
+                               First_FriDate.setDate(currentdate.getDate()-9);
+                               Second_FriDate.setDate(First_FriDate.getDate()-7); //2nd friday
+                               Third_FriDate.setDate(Second_FriDate.getDate()-7); //3rd friday
+                               Fourth_FriDate.setDate(Third_FriDate.getDate()-7); //4th friday
+
+                                // Compare between 2nd and 3rd fridays
+                                seal1 = First_FriDate.getTime();
+                                seal2 = Second_FriDate.getTime();
+                                difference_ms = seal1 - seal2;
+                                Diffval=Math.round(difference_ms/one_day);
+
+                                if(Diffval!=7 && Diffval!=-7 )
+                                {
+                                 Second_FriDate.setDate(First_FriDate.getDate()-35);
+                                 day_cr=Second_FriDate.getDay();
+                                 if(day_cr!=5)
+                                 {
+                                 Second_FriDate=new Date();
+                                 Second_FriDate.setDate(First_FriDate.getDate()-38);
+                                 }
+                                  day_cr=Second_FriDate.getDay();
+                                 if(day_cr!=5)
+                                 {
+                                  Second_FriDate=new Date();
+                                  Second_FriDate.setDate(First_FriDate.getDate()-37);
+                                 }
+                                  day_cr=Second_FriDate.getDay();
+                                 if(day_cr!=5)
+                                 {
+                                    Second_FriDate=new Date();
+                                    Second_FriDate.setDate(First_FriDate.getDate()-36);
+                                 }
+                                }
+
+                                console.log("2nd Fri:"+Second_FriDate);
+
+                                seal1 = Second_FriDate.getTime();
+                                seal2 = Third_FriDate.getTime();
+                                difference_ms = seal1 - seal2;
+                                console.log("2nd and 3rd firday difference:"+difference_ms);
+                                Diffval=Math.round(difference_ms/one_day);
+                                console.log("2nd and 3rd difference:"+Diffval);
+
+                                if(Diffval!=7 && Diffval!=-7 )
+                                {
+                                 Third_FriDate.setDate(Second_FriDate.getDate()-35);
+                                 day_cr=Third_FriDate.getDay();
+                                 if(day_cr!=5)
+                                 {
+                                 Third_FriDate=new Date();
+                                 Third_FriDate.setDate(Second_FriDate.getDate()-38);
+                                 }
+                                 day_cr=Third_FriDate.getDay();
+                                 if(day_cr!=5)
+                                 {
+                                 Third_FriDate=new Date();
+                                 Third_FriDate.setDate(Second_FriDate.getDate()-37);
+                                 }
+                                 day_cr=Third_FriDate.getDay();
+                                 if(day_cr!=5)
+                                 {
+                                 Third_FriDate=new Date();
+                                 Third_FriDate.setDate(Second_FriDate.getDate()-36);
+                                 }
+                                }
+
+                               // Compare between 4th and 3rd fridays
+                                 seal1 = Third_FriDate.getTime();
+                                 seal2 = Fourth_FriDate.getTime();
+                                 one_day=1000*60*60*24;
+                                 difference_ms = seal2 - seal1;
+                                 Diffval=Math.round(difference_ms/one_day);
+
+                                 if(Diffval!=7 && Diffval!=-7)
+                                  {
+                                   Fourth_FriDate.setDate(Third_FriDate.getDate()-35);
+                                   day_cr=Fourth_FriDate.getDay();
+                                   if(day_cr!=5)
+                                   {
+                                   Fourth_FriDate=new Date();
+                                   Fourth_FriDate.setDate(Third_FriDate.getDate()-38);
+                                   }
+                                    day_cr=Fourth_FriDate.getDay();
+                                    if(day_cr!=5)
+                                    {
+                                    Fourth_FriDate=new Date();
+                                    Fourth_FriDate.setDate(Third_FriDate.getDate()-37);
+                                    }
+                                    day_cr=Fourth_FriDate.getDay();
+                                    if(day_cr!=5)
+                                    {
+                                     Fourth_FriDate=new Date();
+                                     Fourth_FriDate.setDate(Third_FriDate.getDate()-36);
+                                    }
+                                  }
+                                   console.log("first friday:"+First_FriDate);
+                                   console.log("Second Friday:"+Second_FriDate);
+                                   console.log("Third:"+Third_FriDate);
+                                   console.log("Fourth:"+Fourth_FriDate);
+
+                                   coverttoshort(First_FriDate,Second_FriDate,Third_FriDate,Fourth_FriDate);
+
+                                   break;
 				
 					}
 						var Name=localStorage.getItem("EName");
 						var  Ikey;
-						var dbref=new Firebase("https://apraisalstaging.firebaseio.com/EmployeeDB/EInfo").orderByKey();
+						var dbref=new Firebase("https://benisonapraisal.firebaseio.com/EmployeeDB/EInfo").orderByKey();
 						dbref
 						.once("value")
 						.then
@@ -336,7 +769,10 @@
 											 if(Nameval==Name)
 											 {
 											 Ikey=childsnapshot.key();
-												 var dxRef=new Firebase("https://apraisalstaging.firebaseio.com/EmployeeDB/EApraise/"+Ikey);
+											  var data=childsnapshot.val();
+                                               var Admin=data.Admin;
+                                                Edit_tabel(Admin);
+												 var dxRef=new Firebase("https://benisonapraisal.firebaseio.com/EmployeeDB/EApraise/"+Ikey);
 												 dxRef
 													.once("value")
 														.then
@@ -404,6 +840,7 @@
 						
 						opt3.text=Fourth_FriDate;
 						sel.append(opt3);
+						sel.addEventListener("change",change_catch);
 						
 					 
 				}	
@@ -431,7 +868,7 @@
 						var dc1,dc2,dc3,dc4,dc5;
 						dc1=0;dc2=0;dc3=0;dc4=0;dc5=0;
 						//getting the value when stars for discipline are selecetd
-						var dbRef= new Firebase("https://apraisalstaging.firebaseio.com/");
+						var dbRef= new Firebase("https://benisonapraisal.firebaseio.com/");
 						if(document.getElementById('star51').checked)
 							{
 							   dc5=document.getElementById("star51").value;
@@ -612,7 +1049,7 @@
 						
 						Message=document.getElementById('Msgbox').value;
 
-						var dbref=new Firebase("https://apraisalstaging.firebaseio.com/EmployeeDB/EInfo").orderByKey();
+						var dbref=new Firebase("https://benisonapraisal.firebaseio.com/EmployeeDB/EInfo").orderByKey();
 					
 						dbref
 						.once("value")
@@ -633,7 +1070,8 @@
 											 if(Nameval==Name)
 											 {
 											 Ikey=childsnapshot.key();
-											 var dbxref=new Firebase("https://apraisalstaging.firebaseio.com/EmployeeDB/EApraise/"+Ikey);
+
+											 var dbxref=new Firebase("https://benisonapraisal.firebaseio.com/EmployeeDB/EApraise/"+Ikey);
 											
 												var RNref = 
 												dbxref
@@ -647,29 +1085,22 @@
 														CustomerFocus:d5val,
 														//Initiative:d6val,
 														Ovaerll:dvval,
-														Message:Message,
+														Comment:Message,
 														Name:Nameval
 														}
 													 );
 												if(RNref)
 												{
-												
-													
-													
-													alert("Saved to database,Overall Rating is : "+dvval);
-													
+													//alert("Saved to database,Overall Rating is : "+dvval);
+
 													write(dvval);
+                                                    window.location.href="dashboard.html";
 												
 												}
-											 
-											 
-											 
 											  }
 										}
 									);
-									
-								
-								
+
 								}
 								
 							);
@@ -727,13 +1158,13 @@
 									if(i==4)
 									{
 									console.log("i:"+i+"j:"+j);
-									flowdiv.innerHTML ='Appreciable';
+									flowdiv.innerHTML ='Good-effort';
 									}
 									
 									if(i==3)
 									{
 									console.log("i:"+i+"j:"+j);
-									flowdiv.innerHTML ='Good-effort';
+									flowdiv.innerHTML ='Appreciable';
 									}
 									
 									if(i==2)
@@ -745,7 +1176,7 @@
 									if(i==1)
 									{
 									console.log("i:"+i+"j:"+j);
-									flowdiv.innerHTML ='Phew!';
+									flowdiv.innerHTML ='Barely made it!';
 									}
 									
 								}
@@ -781,4 +1212,56 @@
 						
 						
 					
-					
+					function change_catch()
+					{
+					document.getElementById('star51').checked=false;
+                    document.getElementById('star41').checked=false;
+                    document.getElementById('star31').checked=false;
+                    document.getElementById('star21').checked=false;
+                    document.getElementById('star11').checked=false;
+                    document.getElementById('star52').checked=false;
+                    document.getElementById('star42').checked=false;
+                    document.getElementById('star32').checked=false;
+                    document.getElementById('star22').checked=false;
+                    document.getElementById('star12').checked=false;
+                    document.getElementById('star53').checked=false;
+                    document.getElementById('star43').checked=false;
+                    document.getElementById('star33').checked=false;
+                    document.getElementById('star23').checked=false;
+                    document.getElementById('star13').checked=false;
+                    document.getElementById('star54').checked=false;
+                    document.getElementById('star44').checked=false;
+                    document.getElementById('star34').checked=false;
+                    document.getElementById('star24').checked=false;
+                    document.getElementById('star14').checked=false;
+                    document.getElementById('star55').checked=false;
+                    document.getElementById('star45').checked=false;
+                    document.getElementById('star35').checked=false;
+                    document.getElementById('star25').checked=false;
+                    document.getElementById('star15').checked=false;
+
+
+                    var flowdiv1=document.getElementById('ratedisplayAtt');
+                    var flowdiv2=document.getElementById('ratedisplayQual');
+                    var flowdiv3=document.getElementById('placeholdMET');
+                    var flowdiv4=document.getElementById('Cfocus');
+                    var flowdiv5=document.getElementById('placeDcsp');
+                    flowdiv1.innerHTML ='';
+                    flowdiv2.innerHTML ='';
+                    flowdiv3.innerHTML ='';
+                    flowdiv4.innerHTML ='';
+                    flowdiv5.innerHTML ='';
+
+					}
+
+
+
+function Edit_tabel(Flag)
+{
+    if(Flag!="True")
+         {
+                 //tb.getElementsByTagName("th")[3].style.display = "none";
+              document.getElementById("Main_Menu").children[2].style.display = "none"
+         }
+
+}
