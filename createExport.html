@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Export</title>
+
+</head>
+<body>
+
+<input type="text"  value="ajay.virginkar@benisontech.com" id="Email">
+<button onclick="CallExportIt()">Export It!</button>
+<script src="js/exporttoJson.js"></script>
+<script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
+<script src="https://cdn.firebase.com/v0/firebase-simple-login.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.7.0/firebase.js"></script>
+<script>
+          // Initialize Firebase
+          var config = {
+            apiKey: "AIzaSyCttIvURKJSZu1oG77jRhtOian0PDQnL4I",
+            authDomain: "benisonapraisal.firebaseapp.com",
+            databaseURL: "https://benisonapraisal.firebaseio.com",
+            storageBucket: "benisonapraisal.appspot.com",
+            messagingSenderId: "235902763929"
+          };
+          firebase.initializeApp(config);
+        </script>
+</body>
+</html>

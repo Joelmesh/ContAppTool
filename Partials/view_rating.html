@@ -8,7 +8,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>Welcome to Continue Appraisel form</title>
+<title>View Ratings</title>
 
 
 <link rel="stylesheet" type="text/css" href="../assets/vendor/custom/css/main.css">
@@ -25,7 +25,7 @@
 <div class="wrapper">
 <header class="main-header">
     <!-- Logo -->
-    <a href="index.html" class="logo">
+    <a href="dashboard.html" class="logo">
     <!-- mini logo for sidebar mini 50x50 pixels -->
     <span class="logo-mini"><b> <img src="../images/Benison_icon.png" alt=""/></b></span>
     <!-- logo for regular state and mobile devices -->
@@ -56,22 +56,24 @@
 <aside class="main-sidebar">
     <section class="sidebar">
         <div class="user-panel">
-            <h2>Continous Appraisel Web-App</h2>
+            <h2>Continous Appraisel</h2>
         </div>
       
       	<!-- sidebar menu: -->
-        <ul class="sidebar-menu">
+        <ul class="sidebar-menu" id="Main_Menu">
             <li class="treeview"><a href="dashboard.html"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
             <li class="treeview"><a href="add_rating.html"><i class="fa fa-edit"></i> <span>Add Ratings</span></a></li>
+            <li class="treeview"><a href="Myview.html"><i class="fa fa-edit"></i> <span>My View</span></a></li>
+            <li class="treeview"><a href="Add_ratings_direct.html"><i class="fa fa-edit"></i> <span>Multiple Employees Rating</span></a></li>
             <!--<li class="treeview"><a href="employeelist.html"><i class="fa fa-list"></i> <span>Emp List with Project</span></a></li>-->
-          <!--  <li class="active treeview"><a href="#"><i class="fa fa-pie-chart"></i> <span>Reports</span>
+           <li class="active treeview"><a href="#"><i class="fa fa-pie-chart"></i> <span>Reports</span>
                 <i class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu">                  
-                  	<li><a href="#"><i class="fa fa-circle-o"></i> Weekly Report</a></li>
-                    <li><a href="#"><i class="fa fa-circle-o"></i> Monthly Reports</a></li>
-                    <li><a href="#"><i class="fa fa-circle-o"></i> Yearly Reports </a></li>
+                  	<li><a href="weeklyreports.html"><i class="fa fa-circle-o"></i> Weekly Report</a></li>
+                   <!-- <li><a href="#"><i class="fa fa-circle-o"></i> Monthly Reports</a></li>
+                    <li><a href="#"><i class="fa fa-circle-o"></i> Yearly Reports </a></li>-->
                 </ul>
-            </li>  -->                  
+            </li>
         </ul>
     </section>
 </aside>
@@ -153,273 +155,25 @@
 <script src="../assets/vendor/custom/js/graph_ctrl.js"></script>
 <script src="../assets/vendor/custom/js/graph.js"></script>
 
+<script src="../js/Call_graph.js"></script>
 
 <!--Adding firebase source files -->
 
 <script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
 <script src="https://cdn.firebase.com/v0/firebase-simple-login.js"></script>
-<script src="https://www.gstatic.com/firebasejs/3.6.7/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.7.0/firebase.js"></script>
+
 <script>
-
-// Initialize Firebase
-
-			 var config = {
-							apiKey: "AIzaSyDrW6XRPqaLSLvy3gPWTtxkKazrmo8LlTI",
-							authDomain: "apraisalstaging.firebaseapp.com",
-							databaseURL: "https://apraisalstaging.firebaseio.com",
-							storageBucket: "apraisalstaging.appspot.com",
-							messagingSenderId: "376417868003"
-						  };
-			  firebase.initializeApp(config);
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCttIvURKJSZu1oG77jRhtOian0PDQnL4I",
+    authDomain: "benisonapraisal.firebaseapp.com",
+    databaseURL: "https://benisonapraisal.firebaseio.com",
+    storageBucket: "benisonapraisal.appspot.com",
+    messagingSenderId: "235902763929"
+  };
+  firebase.initializeApp(config);
 </script>
 
-<script>
-
-var Name;
-var global_push=new Array();
-var get_data;
-var count;
-
-window.onload = function() {
-    Name=localStorage.getItem("VName");
-	Plot_graph();}
-
-    function Plot_graph()
-    {
-        Chart.defaults.global.tooltipTemplate =
-      "<%if (label){%><%=label%>: <%}%><%= value %>";
-        var Name=localStorage.getItem("VName");
-        var  Ikey;
-        var dbref=new Firebase("https://apraisalstaging.firebaseio.com/EmployeeDB/EInfo").orderByKey();
-
-			dbref
-			.once("value")
-			.then
-			(
-				function(snapshot)
-				{
-
-					snapshot.forEach
-					(
-
-					function(childsnapshot)
-					{
-											   
-					 var data = childsnapshot.val();
-					 var Nameval=data.Name;
-					 var Dates_log=new Array();
-					 var O_rating=new Array();
-					 var Attitude=new Array;
-					 var Cfocus=new Array();
-					 var tooltip;
-
-							if(Nameval==Name)
-							 {
-							 console.log("Success");
-							 Ikey=childsnapshot.key();
-					 
-							 var dxRef=new Firebase("https://apraisalstaging.firebaseio.com/EmployeeDB/EApraise/"+Ikey);	
-							 dxRef
-							.once("value")
-								.then
-								(
-									function(snapshot)
-									{
-									
-										function myfunction(){
-										
-											   for(var i=0;i<O_rating.length;i++)
-											   console.log("Overall Ratings:"+O_rating[i]);
-											   for(var i=0;i<Dates_log.length;i++)
-											   console.log("Date:"+Dates_log[i]);
-
-											   for(var i=0;i<Attitude.length;i++)
-											   {
-											   tooltip = "Attitude:" + Attitude[i] + ", Customer_focus: " + Cfocus[i] ;
-                                               }
-											   for(var i=0;i<Attitude.length;i++)
-											   {
-											   console.log("Attitude:"+Attitude[i]);
-											    }
-												var config =
-												{
-													type: 'line',
-													data: {
-														labels:Dates_log,	//dates populated
-														datasets: [{
-															label:Name,		//Name of reporting employee
-															backgroundColor: window.chartColors.red,
-															borderColor: window.chartColors.red,
-															data:O_rating,
-															fill: false,
-														}]
-													},
-													options: {
-														responsive: true,
-														Animation:true,
-														title:{
-															display:true,
-															text:'Graph view'
-														},
-
-
-
-tooltips: {
-
-
-    callbacks: {
-						label: function(tooltipItem, data)
-						{
-						get_val().then(function(data) {
-						var P_array=new Array();
-						for(var i=0;i<data.length;i++)
-						{
-						P_array[i]=data[i];
-						}
-						for(var i=0;i<P_array.length;i++)
-						{
-						console.log("Array data:"+P_array[i]);
-						}
-						get_data=data;
-						}
-						);
-						
-						
-						 return (get_data);
-						
-						 
-						    function get_val()
-							{
-						    var value = data.datasets[0].data[tooltipItem.index];
-						    var label = data.labels[tooltipItem.index];
-							var collect_info=new Array();
-						    var Name = localStorage.getItem("VName");
-						    var dbref = firebase.database().ref("EmployeeDB/EInfo/").orderByChild("Name").equalTo(Name);
-							count=0;
-						    return dbref.once("value")
-						   .then(function(snapshot) 
-						   {
-						    var promises = [];
-						    snapshot.
-							forEach(function(childsnapshot) {
-						    var data = childsnapshot.val();
-						    var Nameval = data.Name;
-						    Ikey = childsnapshot.key;
-						    var dxRef = firebase.database().ref("EmployeeDB/EApraise/" + Ikey).orderByChild("Dateval").equalTo(label);
-						    promises.push(
-						    dxRef.once("value").then(function(snapshot) {
-						    snapshot.forEach(function(childsnapshot) {
-							var data = childsnapshot.val();
-							collect_info.push("Attitude:"+data.Attitude);
-							collect_info.push("Deadlinemet:"+data.DeadlineMet);
-							collect_info.push("CustomerFocus:"+data.CustomerFocus);
-							collect_info.push("Discipline:"+data.Discipline);
-							collect_info.push("Quality:"+data.Quality);
-							collect_info.push("OverallRating:"+data.Ovaerll);
-						 });
-						}).then(function() {
-						  return collect_info;
-						})
-					  );
-					})
-					return Promise.all(promises);
-				  })
-				  
-				  }
-				  }
-				
-			   }
-			 
-	 },
-                                 hover: {
-                                            mode: 'nearest',
-                                            intersect: false
-                                        },
-                                            scales: {
-                                                xAxes: [{
-                                                    display: true,
-                                                    scaleLabel: {
-                                                        display: true,
-                                                        labelString: 'Weeks'
-                                                    }
-                                                }],
-                                                yAxes: [{
-                                                    display: true,
-                                                    scaleLabel: {
-                                                        display: true,
-                                                        labelString: 'Ratings'
-                                                    }
-                                                }]
-                                            }
-                                        }
-                                    };
-
-                                var ctx = document.getElementById("canvas").getContext("2d");
-                                window.myLine = new Chart(ctx, config);
-                                    }
-                                        return new Promise(function(resolve,reject){
-
-                                    snapshot.forEach
-                                    (
-
-                                    function(childsnapshot)
-                                    {
-
-                                    var data=childsnapshot.val();
-                                    var combo="overall Rating:"+data.Dateval+"Attitude value:"+data.Attitude;
-                                    console.log(data);
-                                    Dates_log.push(data.Dateval);
-                                    O_rating.push(data.Ovaerll);
-                                    Attitude.push(data.Attitude);
-                                    Cfocus.push(data.CustomerFocus);
-
-
-                                    }
-
-                                    );
-                                    resolve(myfunction());
-                                    });
-                        }
-								);
-							}
-						 }
-					);
-				}
-			);
-    }
-
-
-function callLogout()
-{
-
- firebase.auth().signOut().then(function() {
-  alert("Do you wish to Log out");
-  window.location.href="log.html";
-},
-
- function(error) {
- alert("Unable to logout");
-});
-
-
-}
-$(function () {
-     var myLine = new Chart(document.getElementById("canvas"), config);
-     document.getElementById("canvas").onclick = function(evt){
-     var activePoints = myLine.getElementsAtEvent(evt);
-     console.log("clicked"+activePoints);
-     var firstPoint = activePoints[0];
-    // if (firstPoint !== undefined)
-
-      alert(config.data.datasets[firstPoint._datasetIndex].data[firstPoint._index]);
-};
-}
-);
-	</script>
-	
-	
-	
-	</body>
-
-
+</body>
 </html>

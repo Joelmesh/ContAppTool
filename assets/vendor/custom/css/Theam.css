@@ -84,7 +84,7 @@ border: 1px solid #C22326;}
 .rating_holder h3{font-size: 15px; color: #666; display: inline; margin: 0 0 0 15px; padding: 0px; line-height: 34px; text-transform: capitalize;}
 .rating_holder label { margin-bottom:0px;}
 .userinfo_rat {text-align:center;background: #fbfbfb;margin: 20% auto 0 auto;border-radius: 3px;padding: 28px 0;box-shadow: 0px 0px 3px rgba(0,0,0,0.5);}
-.userinfo_rat i{width: 72px; background: #fff; line-height: 72px; margin: 10px auto; padding: 0; border-radius: 100px; font-size: 46px; color: #eaeaea;}
+.userinfo_rat i{width: 72px; background: #fff; line-height: 72px; margin: 10px auto; padding: 0; border-radius: 100px; font-size: 46px; color: #eaeaea;    display: block;}
 .userinfo_rat h2{font-size: 15px; color: #354051; display: block; margin: 0px; padding: 0px; line-height: 26px; text-transform: capitalize; font-weight: normal; letter-spacing: 0.2px;}
 .rating {border: none; float: left;}
 
@@ -151,7 +151,25 @@ input,.input-append {vertica-align: middle; }
 .table-condensed > thead > tr > th {padding: 5px 10px !important;}
 .datepicker th.next, .datepicker th.prev {font-size: 17px;}
 
+#loaderspinner {
+	background:rgba(118, 116, 116, 0.88);
+    position: absolute;
+    z-index: 99999;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
 
+.emp_textshow {
+    font-size: 15px;
+    padding: 5px;
+    color: #445260;
+    line-height: normal;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    margin: 0px;
+}
 /*Reset css
 =================*/
 .main-header {box-shadow: 0px 2px 2px RGBA(63, 63, 63, 0.64);}
@@ -194,7 +212,17 @@ padding: 0; background:#63717d;}
 }
 
 
-
+.form-group {overflow: hidden;}
+.control-label{line-height: 30px;}
+.table-border table, .table-border th, .table-border td{ border:1px solid #DDD !important;}
+.box_color { background:#f8f8f8; padding:10px 15px; margin:0px 0px 20px 0px; overflow:hidden; border-top:1px solid #f9f9f9; border-bottom:1px solid #DDD;}
+.box_color .form-group { margin:0px;}
+.box_color .form-control { padding:6px;}
+.table_whitespace table th { white-space: nowrap;}
+.table_whitespace table thead th {background: #6F88A1;color: #fff;}
+.table_whitespace table tbody th {background: #F5F5F5;color: #969696;border: 1px solid #EAEAEA;}
+.table_whitespace table tbody tr td:last-child {color: #787878;max-width: 280px;font-style: italic;}
+.onlick_table{ display:block;}
 /*===================================================
            R E S P O N S I V E  C O D E 
 ====================================================*/
@@ -228,3 +256,7 @@ padding: 0; background:#63717d;}
 }
 
 
+
+.filter-bar.hide {
+ display:none;
+}
